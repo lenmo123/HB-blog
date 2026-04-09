@@ -9,18 +9,21 @@ import type { Stats } from "@/contents/stats";
 export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPosts();
 
-  const posts = allPostsData.map(({ slug, frontMatter: fm }) => ({
-    date: fm.date,
-    title: fm.title,
-    wordCount: fm.wordCount || 0,
-    category: fm.category,
-    tags: fm.tags || [],
-  }));
+  // 过滤掉 date 不存在的文章，并兜底 null
+  const posts = allPostsData
+    .filter(({ frontMatter: fm }) => fm.date != null)
+    .map(({ slug, frontMatter: fm }) => ({
+      date: fm.date ?? null,
+      title: fm.title,
+      wordCount: fm.wordCount || 0,
+      category: fm.category,
+      tags: fm.tags || [],
+    }));
 
   const postsByYear = Object.entries(
     posts.reduce(
       (acc, post) => {
-        const year = new Date(post.date).getFullYear().toString();
+        const year = new Date(post.date!).getFullYear().toString();
         acc[year] = (acc[year] || 0) + 1;
         return acc;
       },
@@ -67,7 +70,7 @@ function StatsPage({ stats }: { stats: Stats }) {
     <Page
       frontMatter={{
         title: "网站统计数据",
-        description: `一些网站文章数据的统计`,
+        description: "一些网站文章数据的统计",
       }}
     >
       <StatsContents initialStats={stats} />
