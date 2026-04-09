@@ -1,5 +1,5 @@
 {
-  "name": "gkblog",
+  "name": "hb-blog-monorepo",
   "private": true,
   "scripts": {
     "build": "turbo run build",
