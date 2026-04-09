@@ -81,7 +81,7 @@ export default function CategoryPage({ category, posts }: CategoryPageProps) {
               border: "none",
               borderRadius: "12px",
               cursor: "pointer",
-              transition: "background-color 0.3s",
+              transition: "background-color: 0.3s",
             }}
             onClick={() => handlePageChange(i)}
             onMouseEnter={(e) => {
@@ -196,14 +196,25 @@ export default function CategoryPage({ category, posts }: CategoryPageProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = getSortedPosts();
   const categoriesArray = Array.from(
-    new Set(posts.map((p) => p.frontMatter.category))
+    new Set(
+      posts
+        .map((p) => p.frontMatter.category)
+        .filter((c): c is string => !!c && typeof c === "string")
+    )
   );
-  const paths = categoriesArray.map((category) => ({ params: { category } }));
+
+  const paths = categoriesArray.map((category) => ({
+    params: { category },
+  }));
 
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const posts = getPostsByCategory(params.category as string);
+  if (!params?.category || typeof params.category !== "string") {
+    return { notFound: true };
+  }
+
+  const posts = getPostsByCategory(params.category);
   return { props: { category: params.category, posts } };
 };
