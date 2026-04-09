@@ -63,7 +63,7 @@ export default function TagPage({ tag, posts }: TagPageProps) {
   };
 
   const renderPageButtons = () => {
-    const buttons = [];
+    const buttons: React.ReactNode[] = [];
     // eslint-disable-next-line no-plusplus
     for (let i = 1; i <= totalPages; i += 1) {
       if (
@@ -196,15 +196,26 @@ export default function TagPage({ tag, posts }: TagPageProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = getSortedPosts();
-  const tagsArray = Array.from(
-    new Set(posts.flatMap((post) => post.frontMatter.tags))
+
+  // 展开标签、过滤undefined/null、只保留有效字符串
+  const allTags = posts.flatMap((post) => post.frontMatter.tags ?? []);
+  const validTags = Array.from(
+    new Set(
+      allTags.filter((tag): tag is string => !!tag && typeof tag === "string")
+    )
   );
-  const paths = tagsArray.map((tag) => ({ params: { tag } }));
+
+  const paths = validTags.map((tag) => ({ params: { tag } }));
 
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const posts = getPostsByTag(params.tag as string);
+  // 参数兜底校验，非法返回404
+  if (!params?.tag || typeof params.tag !== "string") {
+    return { notFound: true };
+  }
+
+  const posts = getPostsByTag(params.tag);
   return { props: { tag: params.tag, posts } };
 };
