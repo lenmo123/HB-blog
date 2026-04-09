@@ -1,0 +1,198 @@
+ WARN  Unsupported engine: wanted: {"node":"^22.0.0"} (current: {"node":"v24.14.1","pnpm":"10.10.0"})
+
+> gkblog@2.2 build D:\HB-blog\HB-blog\apps\gkBlog
+> next build
+
+   ▲ Next.js 15.3.8
+   - Environments: .env.local, .env.production
+
+   Linting and checking validity of types ...
+Pages directory cannot be found at apps/gkBlog/src/pages/. If using a custom path, please configure with the `no-html-link-for-pages` rule in your eslint config file.
+
+Failed to compile.
+
+./src/contents/index/Header/HeaderTitle.tsx
+18:7  Error: Empty components are self-closing  react/self-closing-comp
+
+./src/contents/media/index.tsx
+28:34  Error: Unexpected block statement surrounding arrow body; move the returned value immediately after the `=>`.  arrow-body-style
+83:9  Error: A control must be associated with a text label.  jsx-a11y/control-has-associated-label
+83:9  Error: Missing an explicit type attribute for button  react/button-has-type
+87:189  Error: Empty components are self-closing  react/self-closing-comp
+87:231  Error: Empty components are self-closing  react/self-closing-comp
+87:275  Error: Empty components are self-closing  react/self-closing-comp
+99:15  Error: Missing an explicit type attribute for button  react/button-has-type
+121:23  Error: Do not use Array index in keys  react/no-array-index-key
+122:15  Error: Missing an explicit type attribute for button  react/button-has-type
+151:11  Error: Missing an explicit type attribute for button  react/button-has-type
+163:11  Error: Missing an explicit type attribute for button  react/button-has-type
+
+./src/pages/book/[bookId]-update-log.tsx
+68:24  Error: Do not use Array index in keys  react/no-array-index-key
+83:32  Error: Do not use Array index in keys  react/no-array-index-key
+95:13  Error: Missing an explicit type attribute for button  react/button-has-type
+
+./src/pages/book/[id] - 副本 (2).tsx
+78:17  Error: Empty components are self-closing  react/self-closing-comp
+119:23  Error: Empty components are self-closing  react/self-closing-comp
+129:13  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+129:13  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+146:17  Error: Empty components are self-closing  react/self-closing-comp
+194:29  Error: Do not use Array index in keys  react/no-array-index-key
+
+./src/pages/book/[id] - 副本 (3).tsx
+78:17  Error: Empty components are self-closing  react/self-closing-comp
+119:23  Error: Empty components are self-closing  react/self-closing-comp
+129:13  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+129:13  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+146:17  Error: Empty components are self-closing  react/self-closing-comp
+194:29  Error: Do not use Array index in keys  react/no-array-index-key
+
+./src/pages/book/[id] - 副本 (4).tsx
+56:21  Error: 'prev' is already declared in the upper scope on line 54 column 9.  @typescript-eslint/no-shadow
+61:21  Error: 'prev' is already declared in the upper scope on line 54 column 9.  @typescript-eslint/no-shadow
+90:17  Error: Empty components are self-closing  react/self-closing-comp
+129:23  Error: Empty components are self-closing  react/self-closing-comp
+139:13  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+139:13  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+155:17  Error: Empty components are self-closing  react/self-closing-comp
+202:19  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+202:19  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+203:26  Error: Do not use Array index in keys  react/no-array-index-key
+222:15  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+222:15  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+226:17  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+226:17  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+239:19  Error: A control must be associated with a text label.  jsx-a11y/control-has-associated-label
+239:19  Error: Missing an explicit type attribute for button  react/button-has-type
+244:23  Error: Empty components are self-closing  react/self-closing-comp
+245:23  Error: Empty components are self-closing  react/self-closing-comp
+252:19  Error: A control must be associated with a text label.  jsx-a11y/control-has-associated-label
+252:19  Error: Missing an explicit type attribute for button  react/button-has-type
+257:23  Error: Empty components are self-closing  react/self-closing-comp
+260:19  Error: A control must be associated with a text label.  jsx-a11y/control-has-associated-label
+260:19  Error: Missing an explicit type attribute for button  react/button-has-type
+265:23  Error: Empty components are self-closing  react/self-closing-comp
+
+./src/pages/book/[id] - 副本 (5).tsx
+53:23  Error: Do not define components during render. React will see a new component type on every render and destroy the entire subtree’s DOM nodes and state (https://reactjs.org/docs/reconciliation.html#elements-of-different-types). Instead, move this component definition out of the parent component “BookDetailPage” and pass data as props.  react/no-unstable-nested-components
+53:23  Error: Function component is not a function declaration  react/function-component-definition
+84:17  Error: Empty components are self-closing  react/self-closing-comp
+102:23  Error: Empty components are self-closing  react/self-closing-comp
+103:23  Error: Empty components are self-closing  react/self-closing-comp
+115:23  Error: Empty components are self-closing  react/self-closing-comp
+116:23  Error: Empty components are self-closing  react/self-closing-comp
+130:27  Error: Empty components are self-closing  react/self-closing-comp
+131:27  Error: Empty components are self-closing  react/self-closing-comp
+141:27  Error: Empty components are self-closing  react/self-closing-comp
+142:27  Error: Empty components are self-closing  react/self-closing-comp
+143:27  Error: Empty components are self-closing  react/self-closing-comp
+153:27  Error: Empty components are self-closing  react/self-closing-comp
+154:27  Error: Empty components are self-closing  react/self-closing-comp
+171:23  Error: Empty components are self-closing  react/self-closing-comp
+180:13  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+180:13  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+196:17  Error: Empty components are self-closing  react/self-closing-comp
+240:29  Error: Do not use Array index in keys  react/no-array-index-key
+
+./src/pages/book/[id] - 副本 (6).tsx
+56:22  Error: 'prev' is already declared in the upper scope on line 54 column 9.  @typescript-eslint/no-shadow
+61:22  Error: 'prev' is already declared in the upper scope on line 54 column 9.  @typescript-eslint/no-shadow
+89:17  Error: Empty components are self-closing  react/self-closing-comp
+157:23  Error: Empty components are self-closing  react/self-closing-comp
+167:13  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+167:13  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+187:17  Error: Empty components are self-closing  react/self-closing-comp
+240:19  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+240:19  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+241:26  Error: Do not use Array index in keys  react/no-array-index-key
+260:15  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+260:15  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+264:17  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+264:17  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+277:19  Error: A control must be associated with a text label.  jsx-a11y/control-has-associated-label
+277:19  Error: Missing an explicit type attribute for button  react/button-has-type
+292:23  Error: Empty components are self-closing  react/self-closing-comp
+293:23  Error: Empty components are self-closing  react/self-closing-comp
+300:19  Error: A control must be associated with a text label.  jsx-a11y/control-has-associated-label
+300:19  Error: Missing an explicit type attribute for button  react/button-has-type
+312:23  Error: Empty components are self-closing  react/self-closing-comp
+315:19  Error: A control must be associated with a text label.  jsx-a11y/control-has-associated-label
+315:19  Error: Missing an explicit type attribute for button  react/button-has-type
+327:23  Error: Empty components are self-closing  react/self-closing-comp
+
+./src/pages/book/[id] - 副本.tsx
+78:17  Error: Empty components are self-closing  react/self-closing-comp
+116:23  Error: Empty components are self-closing  react/self-closing-comp
+126:13  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+126:13  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+143:17  Error: Empty components are self-closing  react/self-closing-comp
+191:29  Error: Do not use Array index in keys  react/no-array-index-key
+
+./src/pages/book/[id].tsx
+56:22  Error: 'prev' is already declared in the upper scope on line 54 column 9.  @typescript-eslint/no-shadow
+61:22  Error: 'prev' is already declared in the upper scope on line 54 column 9.  @typescript-eslint/no-shadow
+90:17  Error: Empty components are self-closing  react/self-closing-comp
+159:23  Error: Empty components are self-closing  react/self-closing-comp
+169:13  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+169:13  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+189:17  Error: Empty components are self-closing  react/self-closing-comp
+239:19  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+239:19  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+240:26  Error: Do not use Array index in keys  react/no-array-index-key
+258:15  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+258:15  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+262:17  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+262:17  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+273:19  Error: A control must be associated with a text label.  jsx-a11y/control-has-associated-label
+273:19  Error: Missing an explicit type attribute for button  react/button-has-type
+288:23  Error: Empty components are self-closing  react/self-closing-comp
+289:23  Error: Empty components are self-closing  react/self-closing-comp
+295:19  Error: A control must be associated with a text label.  jsx-a11y/control-has-associated-label
+295:19  Error: Missing an explicit type attribute for button  react/button-has-type
+307:23  Error: Empty components are self-closing  react/self-closing-comp
+310:19  Error: A control must be associated with a text label.  jsx-a11y/control-has-associated-label
+310:19  Error: Missing an explicit type attribute for button  react/button-has-type
+322:23  Error: Empty components are self-closing  react/self-closing-comp
+
+./src/pages/book/新建文件夹/[id] - 副本 (2).tsx
+75:17  Error: Empty components are self-closing  react/self-closing-comp
+140:29  Error: Do not use Array index in keys  react/no-array-index-key
+
+./src/pages/book/新建文件夹/[id] - 副本 (3).tsx
+104:13  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+104:13  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+121:17  Error: Empty components are self-closing  react/self-closing-comp
+159:29  Error: Do not use Array index in keys  react/no-array-index-key
+
+./src/pages/book/新建文件夹/[id] - 副本 (4).tsx
+77:17  Error: Empty components are self-closing  react/self-closing-comp
+110:13  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+110:13  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+127:17  Error: Empty components are self-closing  react/self-closing-comp
+175:29  Error: Do not use Array index in keys  react/no-array-index-key
+
+./src/pages/book/新建文件夹/[id] - 副本 (5).tsx
+78:17  Error: Empty components are self-closing  react/self-closing-comp
+116:23  Error: Empty components are self-closing  react/self-closing-comp
+126:13  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+126:13  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+143:17  Error: Empty components are self-closing  react/self-closing-comp
+191:29  Error: Do not use Array index in keys  react/no-array-index-key
+
+./src/pages/book/新建文件夹/[id] - 副本.tsx
+78:17  Error: Empty components are self-closing  react/self-closing-comp
+113:23  Error: Empty components are self-closing  react/self-closing-comp
+123:13  Error: Visible, non-interactive elements with click handlers must have at least one keyboard listener.  jsx-a11y/click-events-have-key-events
+123:13  Error: Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.  jsx-a11y/no-static-element-interactions
+140:17  Error: Empty components are self-closing  react/self-closing-comp
+188:29  Error: Do not use Array index in keys  react/no-array-index-key
+
+./src/pages/version-log/[title].tsx
+61:11  Error: Missing an explicit type attribute for button  react/button-has-type
+75:15  Error: Empty components are self-closing  react/self-closing-comp
+97:24  Error: Do not use Array index in keys  react/no-array-index-key
+108:32  Error: Do not use Array index in keys  react/no-array-index-key
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+ ELIFECYCLE  Command failed with exit code 1.
