@@ -5,6 +5,38 @@ export interface VersionLogItem {
   changes: string[];
 }
 
+// ========== 站点全局更新日志类型（首页专用，防止被摇树） ==========
+export interface SiteUpdateLogItem {
+  version: string;
+  date: string;
+  content: string[];
+}
+
+// 首页渲染专用全局站点日志
+export const siteUpdateLogs: SiteUpdateLogItem[] = [
+  {
+    version: "v1.8.0",
+    date: "2026-04-10",
+    content: [
+      "修复书架页布局偏移：移除max-w-7xl、mx-auto居中限制，还原本地左对齐边距",
+      "全站封面统一使用PNG原图，放弃WebP，修复线上图片加载异常",
+      "分类栏默认折叠，优化首屏布局",
+      "补齐全部书籍PNG封面资源，新增封面加载失败兜底",
+      "对齐本地开发与Cloudflare静态部署样式渲染差异"
+    ]
+  },
+  {
+    version: "v1.7.0",
+    date: "2026-04-09",
+    content: [
+      "完成书架搜索、分类筛选、分页组件功能",
+      "新增封面hover动效、阴影纹理、书本装帧复刻",
+      "适配深色模式样式、移动端网格自适应布局",
+      "录入首批书籍元数据、简介、标签、字数、平台信息"
+    ]
+  }
+];
+
 export const bookList = [
   // ========== 置顶书籍 · 官网原版简介 ==========
   {
@@ -393,8 +425,8 @@ export const bookList = [
   {
     version: "V1.0",
     title: "超级教练-陈爱庭",
-    category: ["都市", "现实"],
     author: "陈爱庭",
+    category: ["都市", "现实"],
     finishTime: "2013-08-20",
     wordCount: "452万字",
     tags: ["都市", "足球", "教练"],
@@ -740,7 +772,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
         "全书内容完整收录，无删减",
         "上线多看版本，章节排版优化",
         "上线Kindle版本，适配设备显示",
-        "上线墨水屏版本，长时间阅读更舒适",
+        "上线墨水屏版本，护眼阅读更舒适",
         "上线平板版本，沉浸式阅读适配"
       ]
     }

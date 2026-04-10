@@ -22,14 +22,16 @@ export default function MediaContents() {
   const [search, setSearch] = useState("");
   const [activeCat, setActiveCat] = useState("全部");
   const [page, setPage] = useState(1);
+  // 默认关闭
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  const [imgErrorMap, setImgErrorMap] = useState<Record<string, boolean>>({});
   const pageSize = 12;
 
   const filtered = useMemo(() => {
     return bookList.filter(b => {
       const matchSearch = b.title.toLowerCase().includes(search.trim().toLowerCase());
-      const matchCat = 
-        activeCat === "全部" || 
+      const matchCat =
+        activeCat === "全部" ||
         (Array.isArray(b.category) ? b.category.includes(activeCat) : b.category === activeCat);
       return matchSearch && matchCat;
     });
@@ -45,8 +47,13 @@ export default function MediaContents() {
     router.push(`/book/${encodeURIComponent(title)}`);
   };
 
+  const handleImgError = (key: string) => {
+    setImgErrorMap(prev => ({ ...prev, [key]: true }));
+  };
+
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    // 只改了这里：移除 max-w-7xl mx-auto，取消整体居中，还原本地左对齐
+    <div className="px-6 py-8">
       <style>{`
         .book-cover-frame {
           position: relative;
@@ -57,14 +64,14 @@ export default function MediaContents() {
         }
         .book-cover-frame:hover {
           box-shadow: 0 16px 40px rgba(0,0,0,0.16);
-          transform: scale(1.01);
+          transform: 1.01;
         }
         .book-cover-frame::after {
           content: "";
           position: absolute;
           left: 0; top: 0;
           width: 100%; height: 100%;
-          background: linear-gradient(to right, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 0.75%, rgba(255,255,255,0.5) 1%, rgba(255,255,255,0.6) 1.3%, rgba(255,255,255,0.5) 1.4%, rgba(255,255,255,0.3) 1.5%, rgba(255,255,255,0.3) 2.4%, rgba(0,0,0,0.05) 2.7%, rgba(0,0,0,0.05) 3.5%, rgba(255,255,255,0.3) 4%, rgba(255,255,255,0.3) 4.5%, rgba(244,244,244,0.1) 5.4%, rgba(244,244,244,0.1) 99%, rgba(144,144,144,0.2) 100%);
+          background: linear-gradient(to right, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 0.75%, rgba(255,255,255,0.5) 1%, rgba(255,255,255,0.6) 1.3%, rgba(255,255,255,0.5) 1.4%, rgba(255,255,255,0.3) 1.5%, rgba(255,255,255,0.3) 2.4%, rgba(0,0,0,0.05) 2.7%, rgba(0,0,0,0.05) 3.5%, rgba(255,255,255,0.3) 4%, rgba(255,255,255,0.3) 4.5%, rgba(244,244,244,0.1) 5.4%, rgba(244,244,244,0.1) 99%, rgba(144,144,244,0.2) 100%);
           box-shadow: inset 0 -1px 4px rgba(0,0,0,0.12);
           pointer-events: none;
         }
@@ -76,8 +83,11 @@ export default function MediaContents() {
             type="text"
             placeholder="搜索书名..."
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full rounded-xl px-3.5 py-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500"
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setPage(1);
+            }}
+            className="w-full rounded-xl px-3.5 py-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder-slate-500"
           />
         </div>
         <button
@@ -89,21 +99,19 @@ export default function MediaContents() {
       </div>
 
       <div 
-        className={`grid transition-[grid-template-rows] duration-300 ease-in-out overflow-hidden mb-5 ${
-          isCategoryOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-        }`}
+        className="overflow-hidden transition-all duration-300"
+        style={{ maxHeight: isCategoryOpen ? '200px' : '0px' }}
       >
         <div className="min-h-0">
           <div className="flex flex-wrap gap-1.5 justify-center py-1">
             {CATEGORIES.map(cat => (
               <button
                 key={cat}
-                onClick={() => setActiveCat(cat)}
-                className={`px-3 py-0.5 rounded-full text-xs transition-all ${
-                  activeCat === cat 
-                    ? "bg-blue-600 text-white" 
-                    : "bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 dark:text-slate-300"
-                }`}
+                onClick={() => {
+                  setActiveCat(cat);
+                  setPage(1);
+                }}
+                className={`px-3 py-0.5 rounded-full text-xs transition-all ${activeCat === cat ? "bg-blue-600 text-white" : "bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 dark:text-slate-300"}`}
               >
                 {cat}
               </button>
@@ -112,28 +120,34 @@ export default function MediaContents() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-6">
-        {showBooks.map((book, idx) => {
+      <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-6 mt-5">
+        {showBooks.map((book) => {
           const shortTitle = book.title.split('-')[0];
-          const baseCover = `/assets/images/neodb/cover/${shortTitle}`;
+          const src = `/assets/images/neodb/cover/${shortTitle}.png`;
+          const hasError = imgErrorMap[shortTitle];
 
           return (
-            <div key={idx} className="flex flex-col gap-1.5">
-              <button
-                onClick={() => goBook(book.title)}
-                className="rounded-sm overflow-hidden transition-all duration-300 hover:-translate-y-1"
-              >
+            <div key={book.title} className="flex flex-col gap-1.5">
+              <button onClick={() => goBook(book.title)} className="rounded-sm overflow-hidden transition-all duration-300 hover:-translate-y-1">
                 <div className="book-cover-frame relative w-full aspect-[5/7] bg-slate-100 dark:bg-slate-800">
-                  <Image
-                    src={`${baseCover}.png`}
-                    alt={shortTitle}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = `${baseCover}.webp`;
-                    }}
-                  />
+                  {!hasError ? (
+                    <Image
+                      src={src}
+                      alt={shortTitle}
+                      fill
+                      sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                      className="object-cover"
+                      quality={80}
+                      placeholder="blur"
+                      blurDataURL="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABl0BV19JQBw=="
+                      onError={() => handleImgError(shortTitle)}
+                      unoptimized={true}
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-xs text-slate-400">
+                      暂无封面
+                    </div>
+                  )}
                 </div>
               </button>
               <div className="text-center px-1">
@@ -145,7 +159,6 @@ export default function MediaContents() {
         })}
       </div>
 
-      {/* 改版好看的分页按钮 */}
       {totalPage > 1 && (
         <div className="flex items-center justify-center gap-3 mt-10">
           <button
@@ -155,11 +168,9 @@ export default function MediaContents() {
           >
             上一页
           </button>
-
-          <span className="text-sm text-slate-600 dark:text-slate-400 min-w-[80px] text-center">
+          <span className="text-sm text-slate-600 dark:text-slate-400">
             {page} / {totalPage}
           </span>
-
           <button
             onClick={() => setPage(p => Math.min(totalPage, p + 1))}
             disabled={page === totalPage}

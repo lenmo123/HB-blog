@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
+import type { ReactElement } from "react";
 
 import useContentMeta from "@/hooks/useContentMeta";
 
@@ -64,7 +65,6 @@ export default function TagPage({ tag, posts }: TagPageProps) {
 
   const renderPageButtons = () => {
     const buttons: React.ReactNode[] = [];
-    // eslint-disable-next-line no-plusplus
     for (let i = 1; i <= totalPages; i += 1) {
       if (
         i === 1 ||
@@ -97,7 +97,8 @@ export default function TagPage({ tag, posts }: TagPageProps) {
           </button>
         );
       } else if (
-        buttons[buttons.length - 1]?.key !== "..." &&
+        // 修复：类型断言为ReactElement，安全读取key
+        ((buttons[buttons.length - 1] ?? null) as ReactElement | null)?.key !== "..." &&
         (i === 2 ||
           i === totalPages - 1 ||
           i === currentPage - 2 ||
@@ -197,7 +198,6 @@ export default function TagPage({ tag, posts }: TagPageProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = getSortedPosts();
 
-  // 展开标签、过滤undefined/null、只保留有效字符串
   const allTags = posts.flatMap((post) => post.frontMatter.tags ?? []);
   const validTags = Array.from(
     new Set(
@@ -211,7 +211,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // 参数兜底校验，非法返回404
   if (!params?.tag || typeof params.tag !== "string") {
     return { notFound: true };
   }
