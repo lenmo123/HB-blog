@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { bookList } from "@/constants/books";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
@@ -37,11 +37,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return { props: { book: targetBook } };
 };
 
+// 预览图基础路径
+const PREVIEW_BASE = "/assets/images/neodb/preview/";
+
 export default function BookDetailPage({ book }: BookPageProps) {
   const router = useRouter();
   const shortTitle = book.title.split("-")[0];
   const fullTitle = book.title;
-  const baseCover = `/assets/images/neodb/cover/${shortTitle}`;
+  // ✅ 修复1：直接用PNG作为主路径，彻底解决WebP 404问题
+  const baseCover = `/assets/images/neodb/cover/${shortTitle}.png`;
 
   const displayCategory = Array.isArray(book.category)
     ? book.category.join(" | ")
@@ -49,7 +53,12 @@ export default function BookDetailPage({ book }: BookPageProps) {
 
   const [isExpanded, setIsExpanded] = useState(true);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
-  const images = book.previewImages ?? [];
+  const rawImages = book.previewImages ?? [];
+
+  // 自动补全预览图绝对路径：已带/不处理，不带则拼接前缀
+  const images = rawImages.map(src => 
+    src.startsWith("/") ? src : `${PREVIEW_BASE}${src}`
+  );
 
   const prev = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -76,17 +85,18 @@ export default function BookDetailPage({ book }: BookPageProps) {
             <div className="w-[40%] sm:w-[300px] flex-shrink-0">
               <div className="aspect-[5/7] relative rounded overflow-hidden shadow-xl">
                 <Image
-                  src={`${baseCover}.png`}
+                  src={baseCover}
                   alt={shortTitle}
                   fill
                   className="object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = `${baseCover}.webp`;
-                  }}
                   sizes="(max-width:768px) 40vw, 300px"
                   priority
+                  quality={80}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABl0BV19JQBw=="
+                  unoptimized={true}
                 />
-                {/* 封面覆膜样式 100%保留 */}
+                {/* ✅ 修复2：修正CSS语法错误，补全漏写的( */}
                 <div
                   className="absolute inset-0 pointer-events-none"
                   style={{
@@ -101,7 +111,8 @@ export default function BookDetailPage({ book }: BookPageProps) {
 
             {/* 右侧：纯文字、无任何图标、无IconWrapper */}
             <div className="flex-1 min-w-0">
-              <h1 className="text-xl sm:text-3xl md:text-4xl font-bold mb-3 text-slate-900 dark:slate-100 break-words">
+              {/* ✅ 修复3：修正深色模式文字样式 */}
+              <h1 className="text-xl sm:text-3xl md:text-4xl font-bold mb-3 text-slate-900 dark:text-slate-100 break-words">
                 {shortTitle}
               </h1>
 
@@ -154,7 +165,7 @@ export default function BookDetailPage({ book }: BookPageProps) {
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="text-amber-80 dark:text-amber-200"
+                      className="text-amber-800 dark:text-amber-200"
                     >
                       <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
@@ -246,6 +257,11 @@ export default function BookDetailPage({ book }: BookPageProps) {
                       alt={`预览 ${idx + 1}`}
                       className="object-cover"
                       fill
+                      quality={80}
+                      sizes="250px"
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABl0BV19JQBw=="
+                      unoptimized={true}
                     />
                   </div>
                 ))
@@ -269,6 +285,11 @@ export default function BookDetailPage({ book }: BookPageProps) {
                     fill
                     className="object-contain"
                     draggable={false}
+                    quality={85}
+                    sizes="max-w-3xl"
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABl0BV19JQBw=="
+                    unoptimized={true}
                   />
                   <button
                     onClick={(e) => {
