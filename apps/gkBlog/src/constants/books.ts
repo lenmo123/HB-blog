@@ -1057,8 +1057,8 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
   "51": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
   "52": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
   "53": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "54": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }]
-  "55": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }]
+  "54": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "55": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
 };
 
   "56": [
