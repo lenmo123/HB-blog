@@ -64,7 +64,7 @@ export default function MediaContents() {
         }
         .book-cover-frame:hover {
           box-shadow: 0 16px 40px rgba(0,0,0,0.16);
-          transform: 1.01;
+          transform: scale(1.01);
         }
         .book-cover-frame::after {
           content: "";
@@ -123,14 +123,15 @@ export default function MediaContents() {
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-6 mt-5">
         {showBooks.map((book) => {
           const shortTitle = book.title.split('-')[0];
-          const src = `/assets/images/neodb/cover/${shortTitle}.png`;
+          // 修复：读取constants中统一的图床链接，取数组第一个地址
+          const src = book.previewImages?.[0] ?? "";
           const hasError = imgErrorMap[shortTitle];
 
           return (
             <div key={book.title} className="flex flex-col gap-1.5">
               <button onClick={() => goBook(book.title)} className="rounded-sm overflow-hidden transition-all duration-300 hover:-translate-y-1">
                 <div className="book-cover-frame relative w-full aspect-[5/7] bg-slate-100 dark:bg-slate-800">
-                  {!hasError ? (
+                  {src && !hasError ? (
                     <Image
                       src={src}
                       alt={shortTitle}
