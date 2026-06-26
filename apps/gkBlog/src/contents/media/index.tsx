@@ -43,6 +43,7 @@ export default function MediaContents() {
     return filtered.slice(start, start + pageSize);
   }, [filtered, page]);
 
+  // 跳转书籍详情已编码，无需改动
   const goBook = (title: string) => {
     router.push(`/book/${encodeURIComponent(title)}`);
   };
@@ -52,7 +53,6 @@ export default function MediaContents() {
   };
 
   return (
-    // 只改了这里：移除 max-w-7xl mx-auto，取消整体居中，还原本地左对齐
     <div className="px-6 py-8">
       <style>{`
         .book-cover-frame {
@@ -123,7 +123,7 @@ export default function MediaContents() {
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-6 mt-5">
         {showBooks.map((book) => {
           const shortTitle = book.title.split('-')[0];
-          // 修复：读取constants中统一的图床链接，取数组第一个地址
+          // 读取图床预览图数组第一张
           const src = book.previewImages?.[0] ?? "";
           const hasError = imgErrorMap[shortTitle];
 
