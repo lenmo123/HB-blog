@@ -54,7 +54,7 @@ export const siteUpdateLogs: SiteUpdateLogItem[] = [
 
 export const bookList = [
   // ========== 置顶书籍 · 官网原版简介 ==========
-  {
+{
     vid: 1,
     version: "V1.0",
     title: "我在惊悚游戏里封神-壶鱼辣椒",
@@ -66,7 +66,11 @@ export const bookList = [
     platform: "晋江文学城",
     desc: "白柳在失业后被卷入一个无法停止的惊悚直播游戏中，游戏中充满了怪物与各种意想不到的恐怖规则。在死亡与恐惧的裹挟之下，他意外发现自己可以利用游戏规则牟利，就此踏入诡异的惊悚直播世界。",
     previewImages: [
-      "https://s41.ax1x.com/2026/06/26/pmNstUg.png"
+      "https://s41.ax1x.com/2026/06/26/pmNstUg.png",
+      "https://s41.ax1x.com/2026/06/26/pmNcHaT.png",
+      "https://s41.ax1x.com/2026/06/26/pmNcjz9.png",
+      "https://s41.ax1x.com/2026/06/26/pmNcXRJ.png",
+      "https://s41.ax1x.com/2026/06/26/pmNcOG4.png"
     ],
     downloadUrl: ""
   },
@@ -168,6 +172,45 @@ export const bookList = [
     previewImages: ["https://s41.ax1x.com/2026/06/26/pmNsHaD.png"],
     downloadUrl: ""
   },
+
+
+
+
+  {
+    vid: 56,
+    version: "V1.0",
+    title: "犯罪心理-长洱",
+    author: "长洱",
+    category: ["都市", "耽美文", "女频文", "刑侦"],
+    finishTime: "2016-06-15",
+    wordCount: "124万字",
+    tags: [],
+    platform: "晋江文学城",
+    desc: "三年前，顶尖心理学家林辰卷入一桩惨烈绑架案，蒙受不白之冤，身败名裂，隐姓埋名做了大学宿管，苟活度日。一桩带白沙标记的连环命案打破平静，刑侦队长刑从连找上林辰，请他以心理顾问身份协助查案。两人与天才少年技术员王朝组成小队，接连破解白沙连环杀人案、校车失踪案、暗网死亡直播、校园群体自杀、跨国人口贩卖等一系列扭曲黑暗的重案。",
+    previewImages: ["https://stimg.de/img/2026/06/26/RZzsX.webp],
+    downloadUrl: ""
+  },
+
+  {
+    vid: 57,
+    version: "V1.0",
+    title: "相见欢-非天夜翔",
+    author: "非天夜翔",
+    category: ["历史", "耽美文", "女频文"],
+    finishTime: "已完结",
+    wordCount: "80万字",
+    tags: ["历史", "穿越", "爱情", "言情"],
+    platform: "晋江文学城",
+    desc: "乱世割据、诸国纷争的架空时代，少年段岭是寄人篱下、受尽苛待的逃生子，身世隐秘。神秘男子郎俊侠偶然救下他，带他隐姓埋名，以商户子弟身份入贵族学堂读书。少年期间他结识各方世子、质子，看似安稳度日，生父李渐鸿的出现揭开他皇室遗孤的真实身份。平静转瞬破碎，生父遇害、亲友背叛，段岭一夜背负血海深仇与复国重担。",
+    previewImages: ["https://stimg.de/img/2026/06/26/RZd8r.webp"],
+    downloadUrl: ""
+  },
+
+
+
+
+
+
   {
     vid: 9,
     version: "V1.0",
@@ -236,7 +279,7 @@ export const bookList = [
     tags: ["名著", "外国文学", "现实主义", "阶级"],
     platform: "上海译文出版社",
     desc: "以主人公于连的人生挣扎为主线，讲述平民青年追逐名利、反抗阶级桎梏的悲剧一生，刻画十九世纪法国社会的阶级矛盾与人世浮华，一部经典现实主义文学名著。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7NPh.png"],
     downloadUrl: ""
   },
   {
@@ -250,7 +293,7 @@ export const bookList = [
     tags: ["都市", "鉴宝", "异能"],
     platform: "起点中文网",
     desc: "普通典当行职员遭遇意外，双眼觉醒透视异能。古玩珍宝一眼辨真假，玉石赌石一眼窥内里，自此纵横收藏界，步步踏上人生巅峰。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R74wq.png"],
     downloadUrl: ""
   },
   {
@@ -264,7 +307,7 @@ export const bookList = [
     tags: ["历史", "明末", "战争"],
     platform: "起点中文网",
     desc: "风雨飘摇，明末乱世将至。一介小人物跌落时代洪流，于乱世夹缝求生，筹谋布局、练兵卫国，逆流而上重振汉家山河荣光。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7vOw.png"],
     downloadUrl: ""
   },
   {
@@ -278,7 +321,7 @@ export const bookList = [
     tags: ["历史", "宋朝", "争霸"],
     platform: "起点中文网",
     desc: "魂穿南宋赵构，恰逢靖康国难，山河破碎。摒弃苟安逃亡，帝王亲征拒敌，收复沦陷故土，重整大宋河山。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7ZQu.png"],
     downloadUrl: ""
   },
   {
@@ -292,7 +335,7 @@ export const bookList = [
     tags: ["仙侠", "搞笑", "稳健"],
     platform: "起点中文网",
     desc: "穿越修仙宗门，深知乱世祸端，不求锋芒万丈，只求步步稳健。低调发育、避祸藏拙，苟住前路山河，安稳登顶仙道巅峰。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7ab5.png"],
     downloadUrl: ""
   },
   {
@@ -306,9 +349,35 @@ export const bookList = [
     tags: ["玄幻", "修真", "深空"],
     platform: "起点中文网",
     desc: "浩瀚宇宙无垠漂泊，万族林立暗流涌动。跨越星海奔赴深空秘境，探索古老文明遗迹，征战域外强敌，谱写跨越星河的修行传说。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7bMs.png"],
     downloadUrl: ""
   },
+
+
+
+
+  {
+    vid: 55,
+    version: "V1.0",
+    title: "萌版性爱52式-橙人之谜",
+    author: "橙人之谜",
+    category: ["实体书", "教材"],
+    finishTime: "2018-09-02",
+    wordCount: "",
+    tags: [],
+    platform: "",
+    desc: "......",
+    previewImages: ["https://stimg.de/img/2026/06/26/RZfuK.png"],
+    downloadUrl: ""
+  },
+
+
+
+
+
+
+
+
   {
     vid: 19,
     version: "V1.0",
@@ -320,7 +389,7 @@ export const bookList = [
     tags: ["玄幻", "修真", "搞笑"],
     platform: "起点中文网",
     desc: "市井无赖意外重生踏入仙途，行事不拘礼法，游走正邪之间，被修真界视作败类。一路嬉笑怒骂，逆势崛起，走出一条独一无二逆天仙路。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R78KG.png"],
     downloadUrl: ""
   },
   {
@@ -334,7 +403,7 @@ export const bookList = [
     tags: ["玄幻", "东方玄幻", "热血"],
     platform: "起点中文网",
     desc: "妖魔横行人间，苍生流离苦难。少年孟川身负守护之责，修行悟道、斩妖除魔，以一己之力守护故土亲友，踏上热血斩魔之路。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7i2S.png"],
     downloadUrl: ""
   },
   {
@@ -348,7 +417,7 @@ export const bookList = [
     tags: ["玄幻", "修真", "虐主"],
     platform: "起点中文网",
     desc: "一世修行半生飘零，命运浮沉苦海难渡。桑梓故土辗转流离，宿命枷锁层层缠身，踏遍苍茫仙魔路，一念情深，不恋凡尘仙道。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7V4l.png"],
     downloadUrl: ""
   },
   {
@@ -362,7 +431,7 @@ export const bookList = [
     tags: ["玄幻", "科幻修真", "宇宙"],
     platform: "起点中文网",
     desc: "灾变降临地球，人类武道崛起。少年罗峰踏上修行之路，挣脱星球桎梏，远赴浩瀚宇宙征战异族，一路成长，登临宇宙武道之巅。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R75qM.png"],
     downloadUrl: ""
   },
   {
@@ -376,7 +445,7 @@ export const bookList = [
     tags: ["都市", "佣兵", "战争"],
     platform: "起点中文网",
     desc: "普通华夏青年远赴海外，踏入战火纷飞的异国战场，化身漂泊佣兵，在硝烟与危机之中挣扎求生，以热血铸就乱世传奇。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7Wz7.png"],
     downloadUrl: ""
   },
   {
@@ -390,7 +459,7 @@ export const bookList = [
     tags: ["都市", "黑道", "爽文"],
     platform: "起点中文网",
     desc: "平凡市井小人物偶遇奇遇，一枚奇异戒指扭转命运轨迹。从此前路风云变幻，纵横都市江湖，快意恩仇，逆风改写人生。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7eWK.jpg"],
     downloadUrl: ""
   },
   {
@@ -404,7 +473,7 @@ export const bookList = [
     tags: ["都市", "老千", "纪实"],
     platform: "九州出版社",
     desc: "作者亲身经历实录，揭开地下赌场不为人知的内幕。曝光千术套路、江湖骗局，还原灰色地带的尔虞我诈与黑暗浮沉。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7hOX.png"],
     downloadUrl: ""
   },
   {
@@ -418,7 +487,7 @@ export const bookList = [
     tags: ["都市", "足球", "体育"],
     platform: "起点中文网",
     desc: "绿茵赛场之上，他是禁区之中最凌厉的猎手。精准射门、绝杀赛场，以一粒粒进球征服足坛，成为万众瞩目的禁区之王。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7Fjr.png"],
     downloadUrl: ""
   },
   {
@@ -432,7 +501,7 @@ export const bookList = [
     tags: ["都市", "异能", "神话"],
     platform: "起点中文网",
     desc: "现代都市突现神秘禁地，上古神话遗迹重现人间。主角觉醒特殊异能，深入禁区探索秘境，一步步揭开尘封万年的神话真相。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7pl3.png"],
     downloadUrl: ""
   },
   {
@@ -446,7 +515,7 @@ export const bookList = [
     tags: ["都市", "系统", "搞笑", "游戏"],
     platform: "起点中文网",
     desc: "穿越平行世界绑定亏钱致富系统，亏损越多奖励越高。主角一心亏本做烂游戏，奈何作品火爆出圈，上演一出哭笑不得的致富闹剧。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R72MF.png"],
     downloadUrl: ""
   },
   {
@@ -460,7 +529,7 @@ export const bookList = [
     tags: ["都市", "官场", "异能"],
     platform: "起点中文网",
     desc: "意外觉醒读心预知异能，看透人心祸福，洞察世事走向。辗转官商两界，审时度势步步为营，一路扶摇直上，手握权财风生水起。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7c4T.jpg"],
     downloadUrl: ""
   },
   {
@@ -474,7 +543,7 @@ export const bookList = [
     tags: ["都市", "足球", "教练"],
     platform: "起点中文网",
     desc: "华夏教练远赴欧洲足坛，深耕赛场布局战术。带领无名弱队逆袭夺冠，一步步站上世界足坛顶峰，铸就传奇执教生涯。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7Xkd.png"],
     downloadUrl: ""
   },
   {
@@ -488,7 +557,7 @@ export const bookList = [
     tags: ["都市", "系统", "养成"],
     platform: "起点中文网",
     desc: "执掌一方世界，俯瞰文明演化。化身幕后主宰，培育人族文明，见证种族从蛮荒起步，一路繁衍迭代，直至登临神级文明。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7x2W.png"],
     downloadUrl: ""
   },
   {
@@ -502,7 +571,7 @@ export const bookList = [
     tags: ["仙侠", "修真"],
     platform: "起点中文网",
     desc: "资质平庸凡尘少年，无天赋无靠山，固守本心潜心修行。踏遍仙山云海，借机缘、积道果，于凡尘之中走出一条踏实稳健的凡流仙路。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7mzO.jpg"],
     downloadUrl: ""
   },
   {
@@ -516,7 +585,7 @@ export const bookList = [
     tags: ["仙侠", "成仙", "爽文"],
     platform: "起点中文网",
     desc: "修行不问九天飞升，大道只在俗世人间。主角扎根红尘修行，不历天劫、不登仙阙，于人间悟道成真，逍遥尘世，万古长青。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7CtY.jpg"],
     downloadUrl: ""
   },
   {
@@ -530,7 +599,7 @@ export const bookList = [
     tags: ["灵异", "恐怖", "尸"],
     platform: "起点中文网",
     desc: "阴气遍布四野，尸煞横行人间。幽冥诡事层出不穷，尸妖鬼魅四处游荡，主角深陷阴冷绝境，在无边恐怖之中艰难求生。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7yWV.png"],
     downloadUrl: ""
   },
   {
@@ -544,7 +613,7 @@ export const bookList = [
     tags: ["灵异", "诡异", "大妖"],
     platform: "番茄小说",
     desc: "世间诡异复苏，凶煞鬼怪现世作乱，人间沦为危局。主角掌握化妖之力，化身上古大妖，斩除邪祟，镇守一方安宁。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R79oQ.png"],
     downloadUrl: ""
   },
   {
@@ -558,10 +627,10 @@ export const bookList = [
     tags: ["灵异", "恐怖", "经营"],
     platform: "起点中文网",
     desc: "继承一间临街老旧恐怖屋，屋内藏有无数诡秘传闻。解锁凶案场景、收纳灵异鬼怪，经营专属恐怖屋，行走阴阳边界之间。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7Jjy.png"],
     downloadUrl: ""
   },
-  {
+   {
     vid: 37,
     version: "V1.0",
     title: "天灾，我囤几十亿物资在末世求生-袅袅鱼音",
@@ -572,7 +641,7 @@ export const bookList = [
     tags: ["末日", "囤货", "求生"],
     platform: "起点中文网",
     desc: "预知全球天灾降临，末世寒冬将至。提前囤积数十亿物资，打造安全庇护所，在灾害横行、秩序崩塌的末世之中安稳求生。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7Ola.png"],
     downloadUrl: ""
   },
   {
@@ -586,7 +655,7 @@ export const bookList = [
     tags: ["末日", "丧尸", "求生"],
     platform: "起点中文网",
     desc: "丧尸病毒席卷全球，文明秩序一朝崩塌。乱世之中众生挣扎，小人物艰难求生，收拢同伴建立据点，守护幸存者对抗末世危机。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7om0.png"],
     downloadUrl: ""
   },
   {
@@ -600,7 +669,7 @@ export const bookList = [
     tags: ["末日", "废土", "科幻"],
     platform: "起点中文网",
     desc: "诸神陨落，世界沦为荒芜废土。人类挣扎在残破大地之上，危机四伏前路难行，主角觉醒力量，一路探寻诸神陨落的世界真相。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7Ekx.jpg"],
     downloadUrl: ""
   },
   {
@@ -614,7 +683,7 @@ export const bookList = [
     tags: ["历史", "东晋", "文青"],
     platform: "起点中文网",
     desc: "一朝穿越东晋乱世，寒门子弟立足士族当道的时代。落笔写诗风流一世，游走山水之间，书写属于魏晋的风雅流年。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7TNN.png"],
     downloadUrl: ""
   },
   {
@@ -628,7 +697,7 @@ export const bookList = [
     tags: ["历史", "汉朝"],
     platform: "起点中文网",
     desc: "汉末乱世，群雄并起，主角崛起于微末，重整山河，延续大汉国运。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7UDA.png"],
     downloadUrl: ""
   },
   {
@@ -642,7 +711,7 @@ export const bookList = [
     tags: ["历史", "医术", "争霸"],
     platform: "起点中文网",
     desc: "穿越古代，凭借绝世医术，治病救人，纵横官场，一统江山。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7qt2.png"],
     downloadUrl: ""
   },
   {
@@ -656,7 +725,7 @@ export const bookList = [
     tags: ["历史", "清朝", "种田"],
     platform: "起点中文网",
     desc: "穿越清朝末年，种田发展，推翻满清，建立新的华夏帝国。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZ3d1.png"],
     downloadUrl: ""
   },
   {
@@ -670,7 +739,7 @@ export const bookList = [
     tags: ["历史", "北宋", "美食"],
     platform: "起点中文网",
     desc: "穿越北宋，成为小厨师，用现代美食征服古代权贵，美食历史文。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZAoh.jpg"],
     downloadUrl: ""
   },
   {
@@ -684,7 +753,7 @@ export const bookList = [
     tags: ["历史", "明末", "工业"],
     platform: "起点中文网",
     desc: "穿越明末，用现代工业知识，造枪炮、兴工业，挽救大明江山。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZ6Wq.jpg"],
     downloadUrl: ""
   },
   {
@@ -698,7 +767,7 @@ export const bookList = [
     tags: ["历史", "明朝", "官场"],
     platform: "起点中文网",
     desc: "穿越明朝，成为内阁首辅之子，玩转官场，权倾天下，辅佐明君。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZKsw.png"],
     downloadUrl: ""
   },
   {
@@ -712,7 +781,7 @@ export const bookList = [
     tags: ["历史", "三国", "模拟器"],
     platform: "起点中文网",
     desc: "吕布觉醒人生模拟器，模拟不同人生，改变三姓家奴的命运，称霸三国。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZklu.png"],
     downloadUrl: ""
   },
   {
@@ -726,7 +795,7 @@ export const bookList = [
     tags: ["僵尸", "同人", "道士"],
     platform: "飞卢小说网",
     desc: "林正英僵尸世界同人，主角成为邪恶道士，修炼邪术，收服僵尸，纵横阴阳两界。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["httpsstimg.de/img/2026/06/26/RZS0s.png"],
     downloadUrl: ""
   },
   {
@@ -740,7 +809,7 @@ export const bookList = [
     tags: ["精灵宝可梦", "同人", "训练家"],
     platform: "起点中文网",
     desc: "穿越宝可梦世界，只想安稳生活，却被迫成为最强训练家。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZ0m5.png"],
     downloadUrl: ""
   },
   {
@@ -754,7 +823,7 @@ export const bookList = [
     tags: ["精灵宝可梦", "同人", "养成"],
     platform: "起点中文网",
     desc: "现代都市精灵文，主角成为精灵掌门人，培养精灵，守护城市，成为传奇。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZING.png"],
     downloadUrl: ""
   },
   {
@@ -768,7 +837,7 @@ export const bookList = [
     tags: ["精灵宝可梦", "同人"],
     platform: "起点中文网",
     desc: "厌倦了训练家生活，转行做精灵研究员，开启全新的宝可梦人生。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZQDl.png"],
     downloadUrl: ""
   },
   {
@@ -782,7 +851,7 @@ export const bookList = [
     tags: ["无限流", "无限", "武装"],
     platform: "起点中文网",
     desc: "无限流经典，主角进入无数世界，完成任务，强化自身，打造最强武装，征战诸天。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZs3S.png"],
     downloadUrl: ""
   },
   {
@@ -796,7 +865,7 @@ export const bookList = [
     tags: ["文学", "莫言", "乡土"],
     platform: "上海文艺出版社",
     desc: "莫言经典长篇小说，以清末胶东半岛为背景，讲述一场惊心动魄的檀香刑，刻画人性与命运。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZHdM.jpg"],
     downloadUrl: ""
   },
   {
@@ -810,9 +879,9 @@ export const bookList = [
     tags: ["儿童文学", "冒险", "怪物"],
     platform: "接力出版社",
     desc: "专为少年儿童创作的冒险小说，主角与怪物伙伴一起，穿越时空，寻找怪物果实，勇敢成长。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZYe7.png"],
     downloadUrl: ""
-  }
+  },
 ];
 
 // ========== 每本书独立版本日志（改造后：key为vid字符串，适配数字路由） ==========
@@ -830,18 +899,27 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       ]
     }
   ],
-  "2": [
-    {
-      version: "V1.0",
-      date: "2026-03-20",
-      changes: [
-        "全书内容完整收录，无删减",
-        "上线多看版本，章节排版优化",
-        "上线Kindle版本，适配设备显示",
-        "上线墨水屏版本，护眼阅读更舒适",
-        "上线平板版本，沉浸式阅读适配"
-      ]
-    }
+"2": [
+  {
+    version: "V1.2",
+    date: "2026-04-29",
+    changes: [
+      "更新错字",
+
+    ]
+  },
+  {
+    version: "V1.0",
+    date: "2026-03-20",
+    changes: [
+      "全书内容完整收录，无删减",
+      "上线多看版本，章节排版优化",
+      "上线Kindle版本，适配设备显示",
+      "上线墨水屏版本，护眼阅读更舒适",
+      "上线平板版本，沉浸式阅读适配"
+    ]
+  }
+
   ],
   "5": [
     {
@@ -980,4 +1058,33 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
   "52": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
   "53": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
   "54": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }]
+  "55": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }]
 };
+
+  "56": [
+    {
+      version: "V1.0",
+      date: "2026-06-24",
+      changes: [
+        
+        "多看版本：阅读排版优化",
+        "Kindle版本：电纸书适配",
+        "墨水屏版本：护眼显示适配",
+        "平板版本：大屏布局优化"
+      ]
+    }
+
+};
+
+  "57": [
+    {
+      version: "V1.0",
+      date: "2026-04-27",
+      changes: [
+        
+        "多看版本：阅读排版优化",
+        "Kindle版本：电纸书适配",
+        "墨水屏版本：护眼显示适配",
+        "平板版本：大屏布局优化"
+      ]
+    }
