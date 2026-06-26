@@ -1,12 +1,11 @@
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { bookList } from "@/constants/books";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useState } from "react";
 
 interface Book {
-  vid: number; // 新增
+  vid: number;
   title: string;
   author: string;
   category: string | string[];
@@ -23,7 +22,6 @@ interface BookPageProps {
   book: Book;
 }
 
-// 静态路径用数字vid生成，不再用中文标题
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = bookList.map((book) => ({
     params: { vid: String(book.vid) },
@@ -41,7 +39,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const PREVIEW_BASE = "/assets/images/neodb/preview/";
 
 export default function BookDetailPage({ book }: BookPageProps) {
-  const router = useRouter();
   const shortTitle = book.title.split("-")[0];
   const fullTitle = book.title;
   const baseCover = book.previewImages?.[0] ?? "";
@@ -149,7 +146,6 @@ export default function BookDetailPage({ book }: BookPageProps) {
                 </div>
 
                 {book.version && (
-                  {/* 改为数字vid跳转，无中文、无编码 */}
                   <a
                     href={`/version-log/${book.vid}`}
                     className="mt-1 inline-flex items-center gap-1 bg-gradient-to-r from-amber-100 to-amber-300 dark:from-amber-800 dark:to-amber-600 px-2 py-0.5 rounded-md text-xs hover:brightness-110 active:scale-95 transition-all cursor-pointer"
