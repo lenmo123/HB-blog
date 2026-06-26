@@ -43,9 +43,9 @@ export default function MediaContents() {
     return filtered.slice(start, start + pageSize);
   }, [filtered, page]);
 
-  // 跳转书籍详情已编码，无需改动
-  const goBook = (title: string) => {
-    router.push(`/book/${encodeURIComponent(title)}`);
+  // ========== 改动1：跳转函数改为接收vid数字 ==========
+  const goBook = (vid: number) => {
+    router.push(`/book/${vid}`);
   };
 
   const handleImgError = (key: string) => {
@@ -128,8 +128,9 @@ export default function MediaContents() {
           const hasError = imgErrorMap[shortTitle];
 
           return (
-            <div key={book.title} className="flex flex-col gap-1.5">
-              <button onClick={() => goBook(book.title)} className="rounded-sm overflow-hidden transition-all duration-300 hover:-translate-y-1">
+            <div key={book.vid} className="flex flex-col gap-1.5">
+              {/* ========== 改动2：传 book.vid 而不是 title ========== */}
+              <button onClick={() => goBook(book.vid)} className="rounded-sm overflow-hidden transition-all duration-300 hover:-translate-y-1">
                 <div className="book-cover-frame relative w-full aspect-[5/7] bg-slate-100 dark:bg-slate-800">
                   {src && !hasError ? (
                     <Image

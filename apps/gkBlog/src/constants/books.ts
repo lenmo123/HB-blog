@@ -1,3 +1,18 @@
+// ========== 书籍主数据类型 ==========
+export interface Book {
+  vid: number;
+  version?: string;
+  title: string;
+  author: string;
+  category: string[];
+  finishTime?: string;
+  wordCount?: string;
+  tags: string[];
+  platform: string;
+  desc: string;
+  previewImages: string[];
+  downloadUrl: string;
+}
 // ========== 版本日志类型定义 ==========
 export interface VersionLogItem {
   version: string;
@@ -40,6 +55,7 @@ export const siteUpdateLogs: SiteUpdateLogItem[] = [
 export const bookList = [
   // ========== 置顶书籍 · 官网原版简介 ==========
   {
+    vid: 1,
     version: "V1.0",
     title: "我在惊悚游戏里封神-壶鱼辣椒",
     author: "壶鱼辣椒",
@@ -54,20 +70,22 @@ export const bookList = [
     ],
     downloadUrl: ""
   },
- {
-  version: "V1.0",
-  title: "判官-木苏里",
-  author: "木苏里",
-  category: ["无限流", "耽美文", "灵异"],
-  finishTime: "2020-12-31",
-  wordCount: "84.3万字",
-  tags: ["仙侠", "灵异", "闻时", "谢问"],
-  platform: "晋江文学城",
-  desc: "闻时，世人皆称他为判官。尘不见，是闻时一生的执念。年少被尘不见亲手教养，师徒二人情深不移。一场大雪封城，判官身陷笼中，千年轮回再度相逢，山河依旧，人事全非。",
-  previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
-  downloadUrl: ""
-},
   {
+    vid: 2,
+    version: "V1.0",
+    title: "判官-木苏里",
+    author: "木苏里",
+    category: ["无限流", "耽美文", "灵异"],
+    finishTime: "2020-12-31",
+    wordCount: "84.3万字",
+    tags: ["仙侠", "灵异", "闻时", "谢问"],
+    platform: "晋江文学城",
+    desc: "闻时，世人皆称他为判官。尘不见，是闻时一生的执念。年少被尘不见亲手教养，师徒二人情深不移。一场大雪封城，判官身陷笼中，千年轮回再度相逢，山河依旧，人事全非。",
+    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    downloadUrl: ""
+  },
+  {
+    vid: 3,
     version: "V1.0",
     title: "十宗罪-蜘蛛",
     author: "蜘蛛",
@@ -81,6 +99,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 4,
     version: "V1.0",
     title: "云边有个小卖部-张嘉佳",
     author: "张嘉佳",
@@ -94,6 +113,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 5,
     version: "V1.0",
     title: "二哈和他的白猫师尊-肉包不吃肉",
     author: "肉包不吃肉",
@@ -107,6 +127,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 6,
     version: "V1.0",
     title: "重燃-奥尔良烤鲟鱼堡",
     author: "奥尔良烤鲟鱼堡",
@@ -120,6 +141,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 7,
     version: "V1.0",
     title: "人鱼陷落-麟潜",
     author: "麟潜",
@@ -133,6 +155,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 8,
     version: "V1.0",
     title: "不负如来不负卿-小春",
     author: "小春",
@@ -146,6 +169,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 9,
     version: "V1.0",
     title: "银河英雄传说-田中芳树",
     author: "田中芳树",
@@ -159,6 +183,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 10,
     version: "V1.0",
     title: "全能游戏设计师-青衫取醉",
     author: "青衫取醉",
@@ -172,6 +197,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 11,
     version: "V1.0",
     title: "法医秦明：尸语者（上）-法医秦明",
     author: "法医秦明",
@@ -185,6 +211,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 12,
     version: "V1.0",
     title: "法医秦明：尸语者（下）-法医秦明",
     author: "法医秦明",
@@ -199,6 +226,7 @@ export const bookList = [
   },
   // 【新增】红与黑，位于尸语者（下）之后、黄金瞳之前
   {
+    vid: 13,
     version: "V1.0",
     title: "红与黑-司汤达",
     author: "司汤达",
@@ -212,6 +240,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 14,
     version: "V1.0",
     title: "黄金瞳-打眼",
     author: "打眼",
@@ -225,6 +254,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 15,
     version: "V1.0",
     title: "晚明-柯山梦",
     author: "柯山梦",
@@ -238,6 +268,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 16,
     version: "V1.0",
     title: "绍宋-榴弹怕水",
     author: "榴弹怕水",
@@ -251,6 +282,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 17,
     version: "V1.0",
     title: "我师兄实在太稳健了-言归正传",
     author: "言归正传",
@@ -264,6 +296,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 18,
     version: "V1.0",
     title: "深空彼岸-辰东",
     author: "辰东",
@@ -277,6 +310,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 19,
     version: "V1.0",
     title: "修真界败类-跃千愁",
     author: "跃千愁",
@@ -290,6 +324,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 20,
     version: "V1.0",
     title: "沧元图-我吃西红柿",
     author: "我吃西红柿",
@@ -303,6 +338,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 21,
     version: "V1.0",
     title: "求魔-耳根",
     author: "耳根",
@@ -316,6 +352,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 22,
     version: "V1.0",
     title: "吞噬星空-我吃西红柿",
     author: "我吃西红柿",
@@ -329,6 +366,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 23,
     version: "V1.0",
     title: "佣兵的战争-水如意",
     author: "水如意",
@@ -342,6 +380,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 24,
     version: "V1.0",
     title: "邪气凛然-跳舞",
     author: "跳舞",
@@ -355,6 +394,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 25,
     version: "V1.0",
     title: "我的老千生涯-腾飞",
     author: "腾飞",
@@ -368,6 +408,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 26,
     version: "V1.0",
     title: "禁区之狐-林海听涛",
     author: "林海听涛",
@@ -381,6 +422,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 27,
     version: "V1.0",
     title: "神话禁区-何处不染尘",
     author: "何处不染尘",
@@ -394,6 +436,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 28,
     version: "V1.0",
     title: "亏成首富从游戏开始-青衫取醉",
     author: "青衫取醉",
@@ -407,6 +450,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 29,
     version: "V1.0",
     title: "权财-尝谕",
     author: "尝谕",
@@ -420,6 +464,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 30,
     version: "V1.0",
     title: "超级教练-陈爱庭",
     author: "陈爱庭",
@@ -433,6 +478,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 31,
     version: "V1.0",
     title: "饲养全人类-三百斤的微笑",
     author: "三百斤的微笑",
@@ -446,6 +492,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 32,
     version: "V1.0",
     title: "仙寥-中原五百",
     author: "中原五百",
@@ -459,6 +506,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 33,
     version: "V1.0",
     title: "我在人间立地成仙-任我笑",
     author: "任我笑",
@@ -472,6 +520,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 34,
     version: "V1.0",
     title: "极度尸寒-全雨",
     author: "全雨",
@@ -485,6 +534,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 35,
     version: "V1.0",
     title: "诡异复苏：我能化身大妖-叶落归泥",
     author: "叶落归泥",
@@ -498,6 +548,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 36,
     version: "V1.0",
     title: "我有一座恐怖屋-我会修空调",
     author: "我会修空调",
@@ -511,6 +562,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 37,
     version: "V1.0",
     title: "天灾，我囤几十亿物资在末世求生-袅袅鱼音",
     author: "袅袅鱼音",
@@ -524,6 +576,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 38,
     version: "V1.0",
     title: "末日蟑螂-伟岸蟑螂",
     author: "伟岸蟑螂",
@@ -537,6 +590,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 39,
     version: "V1.0",
     title: "陨神记-半醉游子",
     author: "半醉游子",
@@ -550,6 +604,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 40,
     version: "V1.0",
     title: "上品寒士-贼道三痴",
     author: "贼道三痴",
@@ -563,6 +618,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 41,
     version: "V1.0",
     title: "汉鼎余烟-蟹的心",
     author: "蟹的心",
@@ -576,6 +632,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 42,
     version: "V1.0",
     title: "医统江山-石章鱼",
     author: "石章鱼",
@@ -589,6 +646,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 43,
     version: "V1.0",
     title: "草清-草上匪",
     author: "草上匪",
@@ -602,6 +660,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 44,
     version: "V1.0",
     title: "北宋小厨师-南希北庆",
     author: "南希北庆",
@@ -615,6 +674,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 45,
     version: "V1.0",
     title: "明末工程师-米酿",
     author: "米酿",
@@ -628,6 +688,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 46,
     version: "V1.0",
     title: "小阁老-三戒大师",
     author: "三戒大师",
@@ -641,6 +702,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 47,
     version: "V1.0",
     title: "吕布的人生模拟器-会说话的胡子",
     author: "会说话的胡子",
@@ -654,6 +716,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 48,
     version: "V1.0",
     title: "僵尸之邪恶道士-茄子豆角",
     author: "茄子豆角",
@@ -667,6 +730,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 49,
     version: "V1.0",
     title: "我真没想当训练家啊-北川南海",
     author: "北川南海",
@@ -680,6 +744,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 50,
     version: "V1.0",
     title: "精灵掌门人-轻泉流响",
     author: "轻泉流响",
@@ -693,6 +758,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 51,
     version: "V1.0",
     title: "这次不当训练家了-骑车的风",
     author: "骑车的风",
@@ -706,6 +772,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 52,
     version: "V1.0",
     title: "无尽武装-缘分0",
     author: "缘分0",
@@ -719,6 +786,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 53,
     version: "V1.0",
     title: "檀香刑-莫言",
     author: "莫言",
@@ -732,6 +800,7 @@ export const bookList = [
     downloadUrl: ""
   },
   {
+    vid: 54,
     version: "V1.0",
     title: "怪物大师1：穿越时空的怪物果实-雷欧幻想",
     author: "雷欧幻想",
@@ -746,9 +815,9 @@ export const bookList = [
   }
 ];
 
-// ========== 每本书独立版本日志（方案二：纯书名key版） ==========
+// ========== 每本书独立版本日志（改造后：key为vid字符串，适配数字路由） ==========
 export const bookVersionLogs: Record<string, VersionLogItem[]> = {
-  "我在惊悚游戏里封神": [
+  "1": [
     {
       version: "V1.0",
       date: "2026-03-20",
@@ -761,7 +830,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       ]
     }
   ],
-  "判官": [
+  "2": [
     {
       version: "V1.0",
       date: "2026-03-20",
@@ -774,7 +843,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       ]
     }
   ],
-  "二哈和他的白猫师尊": [
+  "5": [
     {
       version: "V1.0",
       date: "2026-03-20",
@@ -787,7 +856,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       ]
     }
   ],
-  "不负如来不负卿": [
+  "8": [
     {
       version: "V1.0",
       date: "2026-03-20",
@@ -800,7 +869,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       ]
     }
   ],
-  "人鱼陷落": [
+  "7": [
     {
       version: "V1.0",
       date: "2026-03-20",
@@ -813,7 +882,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       ]
     }
   ],
-  "法医秦明：尸语者（上）": [
+  "11": [
     {
       version: "V1.0",
       date: "2026-03-20",
@@ -826,7 +895,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       ]
     }
   ],
-  "法医秦明：尸语者（下）": [
+  "12": [
     {
       version: "V1.0",
       date: "2026-03-20",
@@ -839,8 +908,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       ]
     }
   ],
-  // 新增：红与黑，日志和惊悚游戏里封神完全一致
-  "红与黑": [
+  "13": [
     {
       version: "V1.0",
       date: "2026-03-20",
@@ -853,7 +921,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       ]
     }
   ],
-  "全能游戏设计师": [
+  "10": [
     {
       version: "V1.0",
       date: "2026-03-20",
@@ -866,141 +934,50 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       ]
     }
   ],
-  // 其余所有书籍：统一 2026-04-08 + 多看版本
-  "十宗罪": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "云边有个小卖部": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "重燃": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "银河英雄传说": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "黄金瞳": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "晚明": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "绍宋": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "我师兄实在太稳健了": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "深空彼岸": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "修真界败类": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "沧元图": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "求魔": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "吞噬星空": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "佣兵的战争": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "邪气凛然": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "我的老千生涯4部曲": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "禁区之狐": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "神话禁区": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "亏成首富从游戏开始": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "权财": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "超级教练": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "饲养全人类": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
- 
-  "仙寥": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "我在人间立地成仙": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "极度尸寒": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "诡异复苏：我能化身大妖": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "我有一座恐怖屋": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "天灾，我囤几十亿物资在末世求生": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "末日蟑螂": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "陨神记": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "上品寒士": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "汉鼎余烟": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "医统江山": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "草清": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "北宋小厨师": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "明末工程师": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "小阁老": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "吕布的人生模拟器": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "僵尸之邪恶道士": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "我真没想当训练家啊": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "精灵掌门人": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "这次不当训练家了": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "无尽武装": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "檀香刑": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ],
-  "怪物大师1：穿越时空的怪物果实": [
-    { version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }
-  ]
+  // 其余所有书籍统一日志 2026-04-08
+  "3": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "4": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "6": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "9": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "14": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "15": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "16": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "17": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "18": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "19": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "20": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "21": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "22": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "23": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "24": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "25": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "26": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "27": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "28": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "29": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "30": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "31": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "32": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "33": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "34": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "35": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "36": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "37": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "38": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "39": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "40": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "41": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "42": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "43": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "44": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "45": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "46": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "47": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "48": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "49": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "50": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "51": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "52": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "53": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
+  "54": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }]
 };

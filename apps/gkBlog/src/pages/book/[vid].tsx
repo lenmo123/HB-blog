@@ -6,6 +6,7 @@ import Head from "next/head";
 import { useState } from "react";
 
 interface Book {
+  vid: number; // 新增
   title: string;
   author: string;
   category: string | string[];
@@ -22,29 +23,27 @@ interface BookPageProps {
   book: Book;
 }
 
+// 静态路径用数字vid生成，不再用中文标题
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = bookList.map((book) => ({
-    params: { id: book.title },
+    params: { vid: String(book.vid) },
   }));
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const id = context.params?.id as string;
-  const decodedId = decodeURIComponent(id);
-  const targetBook = bookList.find((b) => b.title === decodedId);
+  const vid = context.params?.vid as string;
+  const targetBook = bookList.find((b) => String(b.vid) === vid);
   if (!targetBook) return { notFound: true };
   return { props: { book: targetBook } };
 };
 
-// 预览图基础路径（下方轮播预览兼容逻辑保留，无需改动）
 const PREVIEW_BASE = "/assets/images/neodb/preview/";
 
 export default function BookDetailPage({ book }: BookPageProps) {
   const router = useRouter();
   const shortTitle = book.title.split("-")[0];
   const fullTitle = book.title;
-  // ========== 核心修复：读取constants统一配置的图床封面 ==========
   const baseCover = book.previewImages?.[0] ?? "";
 
   const displayCategory = Array.isArray(book.category)
@@ -55,7 +54,6 @@ export default function BookDetailPage({ book }: BookPageProps) {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const rawImages = book.previewImages ?? [];
 
-  // 自动补全预览图路径：完整外网URL不会拼接本地前缀，兼容原有逻辑
   const images = rawImages.map(src =>
     src.startsWith("/") ? src : `${PREVIEW_BASE}${src}`
   );
@@ -80,11 +78,9 @@ export default function BookDetailPage({ book }: BookPageProps) {
 
       <div className="min-h-screen bg-[#f8f9fa] dark:bg-slate-900">
         <div className="max-w-6xl mx-auto px-2 sm:px-4 pt-24 sm:pt-32 pb-6">
-          {/* 封面区域 - 覆膜渐变完整保留 */}
           <div className="flex flex-row gap-4 sm:gap-8 items-start w-full mb-8 sm:mb-10 ml-4 sm:ml-6">
             <div className="w-[40%] sm:w-[300px] flex-shrink-0">
               <div className="aspect-[5/7] relative rounded overflow-hidden shadow-xl">
-                {/* 增加空值兜底，无图床链接时显示占位文字 */}
                 {baseCover ? (
                   <Image
                     src={baseCover}
@@ -103,7 +99,6 @@ export default function BookDetailPage({ book }: BookPageProps) {
                     暂无封面
                   </div>
                 )}
-                {/* 覆膜渐变div完全原样保留 */}
                 <div
                   className="absolute inset-0 pointer-events-none"
                   style={{
@@ -116,7 +111,6 @@ export default function BookDetailPage({ book }: BookPageProps) {
               </div>
             </div>
 
-            {/* 右侧：纯文字信息区域完全不变 */}
             <div className="flex-1 min-w-0">
               <h1 className="text-xl sm:text-3xl md:text-4xl font-bold mb-3 text-slate-900 dark:text-slate-100 break-words">
                 {shortTitle}
@@ -155,8 +149,9 @@ export default function BookDetailPage({ book }: BookPageProps) {
                 </div>
 
                 {book.version && (
+                  {/* 改为数字vid跳转，无中文、无编码 */}
                   <a
-                    href={`/version-log/${shortTitle}`}
+                    href={`/version-log/${book.vid}`}
                     className="mt-1 inline-flex items-center gap-1 bg-gradient-to-r from-amber-100 to-amber-300 dark:from-amber-800 dark:to-amber-600 px-2 py-0.5 rounded-md text-xs hover:brightness-110 active:scale-95 transition-all cursor-pointer"
                   >
                     <span className="text-amber-900 dark:text-amber-100 font-medium text-sm">
@@ -181,7 +176,6 @@ export default function BookDetailPage({ book }: BookPageProps) {
             </div>
           </div>
 
-          {/* 下方简介、免责、下载、预览轮播全部原样保留无改动 */}
           <div className="bg-white/70 dark:bg-slate-800 rounded-xl p-4 sm:p-6 shadow-sm border border-slate-100/50 dark:border-slate-700 mb-4">
             <div
               className="flex items-center justify-between cursor-pointer"
