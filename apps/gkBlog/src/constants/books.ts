@@ -187,7 +187,7 @@ export const bookList = [
     tags: [],
     platform: "晋江文学城",
     desc: "三年前，顶尖心理学家林辰卷入一桩惨烈绑架案，蒙受不白之冤，身败名裂，隐姓埋名做了大学宿管，苟活度日。一桩带白沙标记的连环命案打破平静，刑侦队长刑从连找上林辰，请他以心理顾问身份协助查案。两人与天才少年技术员王朝组成小队，接连破解白沙连环杀人案、校车失踪案、暗网死亡直播、校园群体自杀、跨国人口贩卖等一系列扭曲黑暗的重案。",
-    previewImages: ["https://stimg.de/img/2026/06/26/RZzsX.webp],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZzsX.webp"],
     downloadUrl: ""
   },
 
