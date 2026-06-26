@@ -66,7 +66,7 @@ export const bookList = [
     platform: "晋江文学城",
     desc: "白柳在失业后被卷入一个无法停止的惊悚直播游戏中，游戏中充满了怪物与各种意想不到的恐怖规则。在死亡与恐惧的裹挟之下，他意外发现自己可以利用游戏规则牟利，就此踏入诡异的惊悚直播世界。",
     previewImages: [
-      "https://s41.ax1x.com/2026/06/26/pmNstUg.png",
+      "https://stimg.de/img/2026/06/26/RZ7gY.png",
       "https://s41.ax1x.com/2026/06/26/pmNcHaT.png",
       "https://s41.ax1x.com/2026/06/26/pmNcjz9.png",
       "https://s41.ax1x.com/2026/06/26/pmNcXRJ.png",
@@ -99,7 +99,7 @@ export const bookList = [
     tags: ["悬疑", "真实案件", "刑侦"],
     platform: "湖南文艺出版社",
     desc: "本书根据真实案件改编而成，涉案地名人名均为化名。十个恐怖变态的凶杀案，就发生在我们身边，每一个都是曾被媒体严密封锁、当局讳莫如深的奇案大案。出于正义，本书作者以笔触记录黑暗，以文字警示世人。",
-    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNsWG9.png"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZZeO.png"],
     downloadUrl: ""
   },
   {
@@ -113,7 +113,7 @@ export const bookList = [
     tags: ["治愈", "都市", "亲情"],
     platform: "湖南文艺出版社",
     desc: "云边小镇藏着岁月与晚风，小卖部堆起落日与温柔。少年刘三一路跌撞奔波，以为努力就能奔赴理想，最后才懂：所有人生的答案，都藏在故乡的晚风与烟火之中。",
-    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNs5Kx.png"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZauV.png"],
     downloadUrl: ""
   },
   {
@@ -127,7 +127,7 @@ export const bookList = [
     tags: ["仙侠", "虐文", "墨燃", "楚晚宁"],
     platform: "晋江文学城",
     desc: "修真帝君墨燃浴火重生，重回年少拜师之时。一世爱恨错位，两世执念纠缠，滔天恨意之下藏着无人知晓的深情与辜负，轮回辗转，终渡相思苦海。",
-    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNs3KP.png"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZ88y.png"],
     downloadUrl: ""
   },
   {
@@ -141,7 +141,7 @@ export const bookList = [
     tags: ["都市", "重生", "日常"],
     platform: "起点中文网",
     desc: "辗转岁月，重回青涩少年时代。前世留有万般遗憾，今生步履不改初心，旧日遗憾尽数弥补，奔赴崭新人生。",
-    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNsIr6.png"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZlHQ.png"],
     downloadUrl: ""
   },
   {
@@ -155,7 +155,7 @@ export const bookList = [
     tags: ["ABO", "都市", "白楚年", "兰波"],
     platform: "长佩文学",
     desc: "顶尖战术指挥白楚年，遇上战力爆表的突击手兰波。硝烟之下情愫生根，跨越隔阂与伤痛，一句执念相守：我属于你，你也归我。",
-    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNsoqK.png"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZPvx.png"],
     downloadUrl: ""
   },
   {
@@ -169,7 +169,7 @@ export const bookList = [
     tags: ["历史", "穿越", "爱情", "言情"],
     platform: "晋江文学城",
     desc: "科研人员艾晴作为实验对象，数次穿越时空，跨越岁月风沙邂逅一代高僧鸠摩罗什。红尘佛法两相难，一场跨越时空的相逢，缘起缘落，一念三生。",
-    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNsHaD.png"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZVya.png"],
     downloadUrl: ""
   },
 
@@ -222,7 +222,7 @@ export const bookList = [
     tags: ["科幻", "史诗", "宇宙"],
     platform: "北京十月文艺出版社",
     desc: "浩瀚星河绵延万里，银河帝国与自由同盟对峙百年。群雄逐鹿星海，战火横跨星系，谱写一部跨越千年、起落沉浮的星际英雄史诗。",
-    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNs7VO.png"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZ5L0.png"],
     downloadUrl: ""
   },
   {
