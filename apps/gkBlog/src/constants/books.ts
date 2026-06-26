@@ -66,7 +66,7 @@ export const bookList = [
     platform: "晋江文学城",
     desc: "白柳在失业后被卷入一个无法停止的惊悚直播游戏中，游戏中充满了怪物与各种意想不到的恐怖规则。在死亡与恐惧的裹挟之下，他意外发现自己可以利用游戏规则牟利，就此踏入诡异的惊悚直播世界。",
     previewImages: [
-      "https://s41.ax1x.com/2026/06/25/pmtITnH.webp"
+      "https://s41.ax1x.com/2026/06/26/pmNstUg.png"
     ],
     downloadUrl: ""
   },
@@ -81,7 +81,7 @@ export const bookList = [
     tags: ["仙侠", "灵异", "闻时", "谢问"],
     platform: "晋江文学城",
     desc: "闻时，世人皆称他为判官。尘不见，是闻时一生的执念。年少被尘不见亲手教养，师徒二人情深不移。一场大雪封城，判官身陷笼中，千年轮回再度相逢，山河依旧，人事全非。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7wCx.webp"],
     downloadUrl: ""
   },
   {
@@ -95,7 +95,7 @@ export const bookList = [
     tags: ["悬疑", "真实案件", "刑侦"],
     platform: "湖南文艺出版社",
     desc: "本书根据真实案件改编而成，涉案地名人名均为化名。十个恐怖变态的凶杀案，就发生在我们身边，每一个都是曾被媒体严密封锁、当局讳莫如深的奇案大案。出于正义，本书作者以笔触记录黑暗，以文字警示世人。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNsWG9.png"],
     downloadUrl: ""
   },
   {
@@ -109,7 +109,7 @@ export const bookList = [
     tags: ["治愈", "都市", "亲情"],
     platform: "湖南文艺出版社",
     desc: "云边小镇藏着岁月与晚风，小卖部堆起落日与温柔。少年刘三一路跌撞奔波，以为努力就能奔赴理想，最后才懂：所有人生的答案，都藏在故乡的晚风与烟火之中。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNs5Kx.png"],
     downloadUrl: ""
   },
   {
@@ -123,7 +123,7 @@ export const bookList = [
     tags: ["仙侠", "虐文", "墨燃", "楚晚宁"],
     platform: "晋江文学城",
     desc: "修真帝君墨燃浴火重生，重回年少拜师之时。一世爱恨错位，两世执念纠缠，滔天恨意之下藏着无人知晓的深情与辜负，轮回辗转，终渡相思苦海。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNs3KP.png"],
     downloadUrl: ""
   },
   {
@@ -137,7 +137,7 @@ export const bookList = [
     tags: ["都市", "重生", "日常"],
     platform: "起点中文网",
     desc: "辗转岁月，重回青涩少年时代。前世留有万般遗憾，今生步履不改初心，旧日遗憾尽数弥补，奔赴崭新人生。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNsIr6.png"],
     downloadUrl: ""
   },
   {
@@ -151,7 +151,7 @@ export const bookList = [
     tags: ["ABO", "都市", "白楚年", "兰波"],
     platform: "长佩文学",
     desc: "顶尖战术指挥白楚年，遇上战力爆表的突击手兰波。硝烟之下情愫生根，跨越隔阂与伤痛，一句执念相守：我属于你，你也归我。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNsoqK.png"],
     downloadUrl: ""
   },
   {
@@ -165,7 +165,7 @@ export const bookList = [
     tags: ["历史", "穿越", "爱情", "言情"],
     platform: "晋江文学城",
     desc: "科研人员艾晴作为实验对象，数次穿越时空，跨越岁月风沙邂逅一代高僧鸠摩罗什。红尘佛法两相难，一场跨越时空的相逢，缘起缘落，一念三生。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNsHaD.png"],
     downloadUrl: ""
   },
   {
@@ -179,7 +179,7 @@ export const bookList = [
     tags: ["科幻", "史诗", "宇宙"],
     platform: "北京十月文艺出版社",
     desc: "浩瀚星河绵延万里，银河帝国与自由同盟对峙百年。群雄逐鹿星海，战火横跨星系，谱写一部跨越千年、起落沉浮的星际英雄史诗。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://s41.ax1x.com/2026/06/26/pmNs7VO.png"],
     downloadUrl: ""
   },
   {
@@ -193,7 +193,7 @@ export const bookList = [
     tags: ["游戏", "系统", "都市"],
     platform: "起点中文网",
     desc: "穿越平行世界，成为一名默默无闻的游戏设计师。绑定全能设计系统之后，主角匠心打造爆款作品，一步步征服全球玩家，掀起游戏行业浪潮。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7dKN.png"],
     downloadUrl: ""
   },
   {
@@ -207,7 +207,7 @@ export const bookList = [
     tags: ["法医", "刑侦", "真实案件"],
     platform: "漓江出版社",
     desc: "尸无言，可诉真相。一线法医亲历案件实录，剖开凶案背后隐藏的蛛丝马迹，以尸体为证，让死者开口，揭露尘封暗处的罪恶。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R7g4A.png"],
     downloadUrl: ""
   },
   {
@@ -221,7 +221,7 @@ export const bookList = [
     tags: ["法医", "刑侦", "真实案件"],
     platform: "漓江出版社",
     desc: "荒山无名残尸、深夜灭门惨案、河道漂浮亡魂，一桩桩诡异凶案暗藏杀机。以专业刑侦手法破解谜案，拨开迷雾，还原案件真相。",
-    previewImages: ["https://s41.ax1x.com/2026/06/25/pmtITnH.webp"],
+    previewImages: ["https://stimg.de/img/2026/06/26/R71p2.jpg"],
     downloadUrl: ""
   },
   // 【新增】红与黑，位于尸语者（下）之后、黄金瞳之前
@@ -822,7 +822,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        "书籍内容完整整理上线",
+        
         "发布多看版本，适配专属排版",
         "发布Kindle版本，适配电纸书设备",
         "发布墨水屏版本，护眼阅读优化",
@@ -848,7 +848,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        "完整剧情整理完毕，正式上线",
+        
         "多看版本：阅读排版优化",
         "Kindle版本：设备适配优化",
         "墨水屏版本：护眼显示适配",
@@ -887,7 +887,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        "书籍内容完整整理发布",
+        
         "多看版本：阅读排版优化",
         "Kindle版本：电纸书设备适配",
         "墨水屏版本：护眼模式适配",
@@ -900,7 +900,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        "全书内容完整收录，剧情连贯",
+        
         "多看版本：章节排版优化",
         "Kindle版本：设备适配优化",
         "墨水屏版本：护眼阅读适配",
@@ -913,7 +913,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        "书籍内容完整整理上线",
+        
         "发布多看版本，适配专属排版",
         "发布Kindle版本，适配电纸书设备",
         "发布墨水屏版本，护眼阅读优化",
@@ -926,7 +926,7 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        "书籍正式上线，内容完整整理",
+        
         "多看版本：阅读排版优化",
         "Kindle版本：电纸书适配",
         "墨水屏版本：护眼显示适配",
@@ -935,49 +935,49 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
     }
   ],
   // 其余所有书籍统一日志 2026-04-08
-  "3": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "4": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "6": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "9": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "14": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "15": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "16": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "17": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "18": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "19": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "20": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "21": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "22": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "23": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "24": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "25": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "26": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "27": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "28": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "29": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "30": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "31": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "32": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "33": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "34": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "35": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "36": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "37": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "38": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "39": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "40": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "41": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "42": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "43": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "44": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "45": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "46": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "47": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "48": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "49": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "50": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "51": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "52": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "53": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }],
-  "54": [{ version: "V1.0", date: "2026-04-08", changes: ["书籍信息初始化", "完善简介与封面", "发布多看版本"] }]
+  "3": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "4": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "6": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "9": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "14": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "15": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "16": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "17": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "18": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "19": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "20": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "21": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "22": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "23": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "24": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "25": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "26": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "27": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "28": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "29": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "30": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "31": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "32": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "33": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "34": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "35": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "36": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "37": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "38": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "39": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "40": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "41": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "42": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "43": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "44": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "45": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "46": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "47": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "48": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "49": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "50": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "51": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "52": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "53": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "54": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }]
 };
