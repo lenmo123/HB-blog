@@ -795,7 +795,7 @@ export const bookList = [
     tags: ["僵尸", "同人", "道士"],
     platform: "飞卢小说网",
     desc: "林正英僵尸世界同人，主角成为邪恶道士，修炼邪术，收服僵尸，纵横阴阳两界。",
-    previewImages: ["httpsstimg.de/img/2026/06/26/RZS0s.png"],
+    previewImages: ["https://stimg.de/img/2026/06/26/RZWXN.png"],
     downloadUrl: ""
   },
   {
