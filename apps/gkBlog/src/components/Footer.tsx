@@ -86,21 +86,7 @@ function FooterDescription() {
             <QQIcon className={clsx("h-5 w-5", "md:h-6 md:w-6")} />
           </a>
         </li>
-        <li>
-          <a
-            href="https://t.me/chunjuanqiying"
-            target="_blank"
-            rel="noreferrer nofollow"
-            className={clsx(
-              "flex h-9 w-9 items-center justify-center",
-              "md:h-10 md:w-10",
-            )}
-            aria-label="My Telegram group"
-            title="My Telegram group"
-          >
-            <TelegramIcon className={clsx("h-5 w-5", "md:h-6 md:w-6")} />
-          </a>
-        </li>
+        {/* 已完全删除Telegram图标区块 */}
       </ul>
     </div>
   );
