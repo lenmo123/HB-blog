@@ -891,7 +891,6 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        
         "发布多看版本，适配专属排版",
         "发布Kindle版本，适配电纸书设备",
         "发布墨水屏版本，护眼阅读优化",
@@ -899,34 +898,31 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       ]
     }
   ],
-"2": [
-  {
-    version: "V1.2",
-    date: "2026-04-29",
-    changes: [
-      "更新错字",
-
-    ]
-  },
-  {
-    version: "V1.0",
-    date: "2026-03-20",
-    changes: [
-      "全书内容完整收录，无删减",
-      "上线多看版本，章节排版优化",
-      "上线Kindle版本，适配设备显示",
-      "上线墨水屏版本，护眼阅读更舒适",
-      "上线平板版本，沉浸式阅读适配"
-    ]
-  }
-
+  "2": [
+    {
+      version: "V1.2",
+      date: "2026-04-29",
+      changes: [
+        "更新错字"
+      ]
+    },
+    {
+      version: "V1.0",
+      date: "2026-03-20",
+      changes: [
+        "全书内容完整收录，无删减",
+        "上线多看版本，章节排版优化",
+        "上线Kindle版本，适配设备显示",
+        "上线墨水屏版本，护眼阅读更舒适",
+        "上线平板版本，沉浸式阅读适配"
+      ]
+    }
   ],
   "5": [
     {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        
         "多看版本：阅读排版优化",
         "Kindle版本：设备适配优化",
         "墨水屏版本：护眼显示适配",
@@ -965,7 +961,6 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        
         "多看版本：阅读排版优化",
         "Kindle版本：电纸书设备适配",
         "墨水屏版本：护眼模式适配",
@@ -978,7 +973,6 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        
         "多看版本：章节排版优化",
         "Kindle版本：设备适配优化",
         "墨水屏版本：护眼阅读适配",
@@ -991,7 +985,6 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        
         "发布多看版本，适配专属排版",
         "发布Kindle版本，适配电纸书设备",
         "发布墨水屏版本，护眼阅读优化",
@@ -1004,7 +997,6 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        
         "多看版本：阅读排版优化",
         "Kindle版本：电纸书适配",
         "墨水屏版本：护眼显示适配",
@@ -1059,32 +1051,28 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
   "53": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
   "54": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
   "55": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-};
-
   "56": [
     {
       version: "V1.0",
       date: "2026-06-24",
       changes: [
-        
         "多看版本：阅读排版优化",
         "Kindle版本：电纸书适配",
         "墨水屏版本：护眼显示适配",
         "平板版本：大屏布局优化"
       ]
     }
-
-};
-
+  ],
   "57": [
     {
       version: "V1.0",
       date: "2026-04-27",
       changes: [
-        
         "多看版本：阅读排版优化",
         "Kindle版本：电纸书适配",
         "墨水屏版本：护眼显示适配",
         "平板版本：大屏布局优化"
       ]
     }
+  ]
+};
