@@ -6,9 +6,8 @@ export default function BookVersionLog() {
   const router = useRouter();
   const { title } = router.query;
 
-  // 1. 新增URL解码，处理静态导出中文编码问题
-  const rawTitle = Array.isArray(title) ? title[0] : title;
-  const decodedTitle = rawTitle ? decodeURIComponent(rawTitle) : undefined;
+  // 移除decodeURIComponent，直接使用原始路由参数
+  const decodedTitle = Array.isArray(title) ? title[0] : title;
 
   // 🔴 终极匹配：支持纯书名 / 书名-作者 100%匹配
   const targetBook = decodedTitle
@@ -25,7 +24,7 @@ export default function BookVersionLog() {
   const logs: VersionLogItem[] = (() => {
     if (!decodedTitle) return [];
 
-    // 1. 纯书名key匹配（你页面传的格式）
+    // 1. 纯书名key匹配（页面传递短书名）
     if (bookVersionLogs[decodedTitle]) {
       return bookVersionLogs[decodedTitle];
     }

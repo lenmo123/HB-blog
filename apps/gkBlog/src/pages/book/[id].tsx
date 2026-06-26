@@ -155,8 +155,9 @@ export default function BookDetailPage({ book }: BookPageProps) {
                 </div>
 
                 {book.version && (
+                  {/* 已移除 encodeURIComponent，直接传递原始中文短标题 */}
                   <a
-                    href={`/version-log/${encodeURIComponent(shortTitle)}`}
+                    href={`/version-log/${shortTitle}`}
                     className="mt-1 inline-flex items-center gap-1 bg-gradient-to-r from-amber-100 to-amber-300 dark:from-amber-800 dark:to-amber-600 px-2 py-0.5 rounded-md text-xs hover:brightness-110 active:scale-95 transition-all cursor-pointer"
                   >
                     <span className="text-amber-900 dark:text-amber-100 font-medium text-sm">
