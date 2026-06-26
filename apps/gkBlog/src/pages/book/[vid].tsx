@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { bookList } from "@/constants/books";
+import { bookList, bookVersionLogs } from "@/constants/books";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useState } from "react";
@@ -42,6 +42,10 @@ export default function BookDetailPage({ book }: BookPageProps) {
   const shortTitle = book.title.split("-")[0];
   const fullTitle = book.title;
   const baseCover = book.previewImages?.[0] ?? "";
+
+  // 自动取当前vid下第一条日志，即为最新版本
+  const logArr = bookVersionLogs[String(book.vid)] ?? [];
+  const latestVersion = logArr.length > 0 ? logArr[0].version : undefined;
 
   const displayCategory = Array.isArray(book.category)
     ? book.category.join(" | ")
@@ -145,13 +149,13 @@ export default function BookDetailPage({ book }: BookPageProps) {
                   )}
                 </div>
 
-                {book.version && (
+                {latestVersion && (
                   <a
                     href={`/version-log/${book.vid}`}
                     className="mt-1 inline-flex items-center gap-1 bg-gradient-to-r from-amber-100 to-amber-300 dark:from-amber-800 dark:to-amber-600 px-2 py-0.5 rounded-md text-xs hover:brightness-110 active:scale-95 transition-all cursor-pointer"
                   >
                     <span className="text-amber-900 dark:text-amber-100 font-medium text-sm">
-                      版本更新 {book.version}
+                      版本更新 {latestVersion}
                     </span>
                     <svg
                       width="14"
