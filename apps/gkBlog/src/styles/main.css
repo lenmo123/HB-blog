@@ -26,9 +26,3 @@ img.cover-img {
   draggable: false;
   pointer-events: none;
 }
-
-/* 禁止移动端双击放大、双指缩放页面 */
-html,
-body {
-  touch-action: manipulation;
-}
