@@ -4,6 +4,11 @@ function Document() {
   return (
     <Html lang="zh-CN">
       <Head>
+        {/* 禁止移动端双指放大页面 */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+        />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/assets/images/cover.jpg" />
         {/* 引入思源宋体 */}
