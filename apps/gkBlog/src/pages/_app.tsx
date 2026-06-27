@@ -47,17 +47,13 @@ type AppPropsWithLayout = AppProps & { Component: NextPageWithLayout };
 function App({ Component, pageProps, router }: AppPropsWithLayout) {
   const route = useRouter();
 
-  // 拦截电脑右键菜单 + 手机长按保存弹窗
+  // 仅拦截电脑右键菜单，移除全局touch拦截，恢复页面所有点击交互
   useEffect(() => {
     const blockContext = (e: MouseEvent) => e.preventDefault();
-    const blockTouch = (e: TouchEvent) => e.preventDefault();
-
     window.addEventListener('contextmenu', blockContext);
-    window.addEventListener('touchstart', blockTouch, { passive: false });
 
     return () => {
       window.removeEventListener('contextmenu', blockContext);
-      window.removeEventListener('touchstart', blockTouch);
     };
   }, []);
 
