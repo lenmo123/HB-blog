@@ -15,7 +15,7 @@ import "@/styles/main.css";
 import "@waline/client/style";
 
 // ========== 全局总开关 true=全站全部页面关闭 ==========
-const MAINTENANCE = true;
+const MAINTENANCE = false;
 
 // 全局错误边界
 class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
