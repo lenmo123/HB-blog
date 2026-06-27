@@ -17,8 +17,8 @@ import "@waline/client/style";
 // ========== 全局总开关 true=全站全部页面关闭 ==========
 const MAINTENANCE = false;
 
-// ========== 更新公告配置（去除重复标题） ==========
-const UPDATE_VERSION = "1.0.0";
+// ========== 更新公告配置 ==========
+const UPDATE_VERSION = "1.0";
 const UPDATE_CONTENT = `
 1. 新增书籍
 《犯罪心理》、《相见欢》、《红与黑》
@@ -28,7 +28,6 @@ const UPDATE_CONTENT = `
 · 《二哈和他的白猫师尊》 更新至1.2
 · 《全能游戏设计师》 更新至1.2
 · 《人鱼陷落》 更新至1.2`;
-
 
 // 全局错误边界
 class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
@@ -61,17 +60,14 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
   const route = useRouter();
   const [showNotice, setShowNotice] = useState(false);
 
-  // 仅拦截电脑右键菜单，移除全局touch拦截，恢复页面所有点击交互
+  // 拦截右键菜单
   useEffect(() => {
     const blockContext = (e: MouseEvent) => e.preventDefault();
     window.addEventListener('contextmenu', blockContext);
-
-    return () => {
-      window.removeEventListener('contextmenu', blockContext);
-    };
+    return () => window.removeEventListener('contextmenu', blockContext);
   }, []);
 
-  // 初始化：对比本地缓存版本，新版本自动弹出公告
+  // 页面挂载立刻判断弹窗，无延迟
   useEffect(() => {
     if (typeof window === "undefined") return;
     const localVer = localStorage.getItem("site_notice_version");
@@ -80,16 +76,14 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
     }
   }, []);
 
-  // 关闭公告并标记已读
+  // 关闭弹窗并标记已读
   const closeNotice = () => {
     setShowNotice(false);
     localStorage.setItem("site_notice_version", UPDATE_VERSION);
   };
 
-  // 维护页放行，其余全部拦截
+  // 维护页面拦截逻辑
   const isMaintenancePage = route.pathname === "/maintenance";
-
-  // 开启维护且当前不是维护页 → 直接渲染维护界面，不加载网站任何内容
   if (MAINTENANCE && !isMaintenancePage) {
     return (
       <div style={{
@@ -126,38 +120,34 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
         <ClarityAnalytics />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID || ""} />
 
-        {/* 全局更新公告弹窗【全新简约改版】 */}
+        {/* 轻奢高级风公告弹窗 */}
         {showNotice && (
           <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/20 p-3 backdrop-blur-md"
             onClick={closeNotice}
           >
             <div
-              className="bg-white dark:bg-slate-900 w-full max-w-md rounded-xl p-6 relative shadow-lg"
+              className="w-full max-w-sm bg-white dark:bg-slate-900 rounded-lg p-5 shadow-xl shadow-black/8 border border-slate-200 dark:border-slate-700/60"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* 关闭按钮 */}
-              <button
-                onClick={closeNotice}
-                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xl w-7 h-7 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              >
-                ×
-              </button>
+              {/* 移除右上角关闭X */}
 
-              {/* 主标题 */}
-              <h2 className="text-xl font-semibold dark:text-white mb-5 text-center">站点更新通知</h2>
+              {/* 标题左对齐，克制字重 */}
+              <h2 className="text-base font-medium text-slate-900 dark:text-slate-50 mb-4 text-left tracking-tight">
+                站点更新通知
+              </h2>
 
-              {/* 公告正文 - 缩小字号 */}
-              <div className="bg-slate-50 dark:bg-slate-800/40 rounded-lg p-4 mb-6">
-                <pre className="whitespace-pre-wrap text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+              {/* 正文区域：淡渐变分层，无厚重底色，高级柔和 */}
+              <div className="rounded p-3 mb-5 bg-gradient-to-r from-slate-50/70 to-slate-100/40 dark:from-slate-800/30 dark:to-slate-800/10">
+                <pre className="whitespace-pre-wrap text-xs text-slate-500 dark:text-slate-400 leading-relax font-sans">
                   {UPDATE_CONTENT}
                 </pre>
               </div>
 
-              {/* 底部确认按钮 */}
+              {/* 渐变柔和按钮，低饱和不刺眼 */}
               <button
                 onClick={closeNotice}
-                className="w-full py-3 rounded-lg bg-blue-500 hover:bg-blue-600 active:bg-blue-700 transition-all font-medium text-sm text-white"
+                className="w-full py-2.5 rounded-md bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-450 hover:to-blue-350 transition-all text-xs font-medium text-white shadow-sm shadow-blue-400/15"
               >
                 我知道了
               </button>
