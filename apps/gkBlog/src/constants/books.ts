@@ -296,6 +296,43 @@ export const bookList = [
     previewImages: ["https://stimg.de/img/2026/06/26/R74wq.png"],
     downloadUrl: ""
   },
+
+
+
+  {
+    vid: 58,
+    version: "V1.0",
+    title: "背叛-豆豆",
+    author: "豆豆",
+    category: ["都市", "商战", "实体书"],
+    finishTime: "2000-01-01",
+    wordCount: "30.2万字",
+    tags: ["商战", "人性", "背叛", "豆豆三部曲"],
+    platform: "实体出版",
+    desc: "高智商知识分子宋一坤，为实现自身抱负布下庞大商业棋局，在金钱、情义与良心之间反复拉扯，欲望催生算计，信任沦为筹码，深刻撕开人性善恶的复杂底色。",
+    previewImages: ["https://stimg.de/img/2026/06/27/RZFh1.webp"],
+    downloadUrl: ""
+  },
+  {
+    vid: 59,
+    version: "V1.0",
+    title: "遥远的救世主-豆豆",
+    author: "豆豆",
+    category: ["都市", "商战", "实体书"],
+    finishTime: "2005-01-01",
+    wordCount: "46.5万字",
+    tags: ["天道", "豆豆三部曲", "文化属性", "丁元英", "芮小丹"],
+    platform: "实体出版",
+    desc: "超脱世俗思维的丁元英，看透强势与弱势文化的本质，受芮小丹托付在贫困村缔造商业奇迹，世间并无天降救世主，能自救者，唯有打破固有认知的自己。",
+    previewImages: ["https://stimg.de/img/2026/06/27/RZpuq.webp"],
+    downloadUrl: ""
+  },
+
+
+
+
+
+
   {
     vid: 15,
     version: "V1.0",
@@ -1074,5 +1111,11 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
         "平板版本：大屏布局优化"
       ]
     }
-  ]
+  ],
+
+
+  "58": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本","不外发"] }],
+  "59": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本","不外发"] }],
+
+
 };
