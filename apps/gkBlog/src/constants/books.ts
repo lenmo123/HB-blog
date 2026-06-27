@@ -953,6 +953,15 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
   ],
   "5": [
     {
+      version: "V1.2",
+      date: "2026-06-17",
+      changes: [
+        "修正全文错字、人名错误",
+        "统一处理屏蔽字",
+        "修复论坛体格式错乱问题"
+      ]
+    },
+    {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
@@ -960,6 +969,28 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
         "Kindle版本：设备适配优化",
         "墨水屏版本：护眼显示适配",
         "平板版本：大屏布局优化"
+      ]
+    }
+  ],
+  "7": [
+    {
+      version: "V1.2",
+      date: "2026-06-27",
+      changes: [
+        "修正全文错字",
+        "补充人物尼克斯简介",
+        "修复封面图片格式错误"
+      ]
+    },
+    {
+      version: "V1.0",
+      date: "2026-03-20",
+      changes: [
+        
+        "多看版本：专属排版优化",
+        "Kindle版本：设备显示适配",
+        "墨水屏版本：护眼阅读适配",
+        "平板版本：大屏沉浸式体验"
       ]
     }
   ],
@@ -973,19 +1004,6 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
         "发布Kindle版本，适配电纸书",
         "发布墨水屏版本，护眼适配",
         "发布平板版本，大屏阅读优化"
-      ]
-    }
-  ],
-  "7": [
-    {
-      version: "V1.0",
-      date: "2026-03-20",
-      changes: [
-        "全书内容完整上线",
-        "多看版本：专属排版优化",
-        "Kindle版本：设备显示适配",
-        "墨水屏版本：护眼阅读适配",
-        "平板版本：大屏沉浸式体验"
       ]
     }
   ],
@@ -1026,6 +1044,14 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
     }
   ],
   "10": [
+    {
+      version: "V1.2",
+      date: "2026-06-29",
+      changes: [
+        "修正全文错字",
+        "修复文本格式错乱问题"
+      ]
+    },
     {
       version: "V1.0",
       date: "2026-03-20",
@@ -1109,9 +1135,6 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
     }
   ],
 
-
   "58": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本","不外发"] }],
   "59": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本","不外发"] }],
-
-
 };
