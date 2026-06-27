@@ -11,23 +11,14 @@ import Provider from "@/providers";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 
+// 导入统一更新数据源
+import { CURRENT_UPDATE_VERSION, CURRENT_POPUP_CONTENT } from "@/constants/update";
+
 import "@/styles/main.css";
 import "@waline/client/style";
 
 // ========== 全局总开关 true=全站全部页面关闭 ==========
 const MAINTENANCE = false;
-
-// ========== 更新公告配置 ==========
-const UPDATE_VERSION = "1.1.4";
-const UPDATE_CONTENT = `
-1. 新增书籍
-《犯罪心理》、《相见欢》、《红与黑》
-
-2. 书籍版本更新
-· 《判官》 更新至1.2
-· 《二哈和他的白猫师尊》 更新至1.2
-· 《全能游戏设计师》 更新至1.2
-· 《人鱼陷落》 更新至1.2`;
 
 // 全局错误边界
 class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
@@ -71,7 +62,7 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
   useEffect(() => {
     if (typeof window === "undefined") return;
     const localVer = localStorage.getItem("site_notice_version");
-    if (localVer !== UPDATE_VERSION) {
+    if (localVer !== CURRENT_UPDATE_VERSION) {
       setShowNotice(true);
     }
   }, []);
@@ -79,7 +70,7 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
   // 关闭弹窗并标记已读
   const closeNotice = () => {
     setShowNotice(false);
-    localStorage.setItem("site_notice_version", UPDATE_VERSION);
+    localStorage.setItem("site_notice_version", CURRENT_UPDATE_VERSION);
   };
 
   // 维护页拦截逻辑
@@ -130,19 +121,15 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
               className="w-full max-w-sm bg-white dark:bg-slate-900 rounded-xl p-6 shadow-2xl shadow-black/5 border border-slate-200/70 dark:border-slate-700/40 transition-transform duration-200 hover:scale-[1.01]"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* 已移除右上角关闭叉号 */}
-
               {/* 标题左对齐，纤细高级字重 */}
               <h2 className="text-base font-medium text-slate-900 dark:text-slate-100 mb-5 text-left tracking-tight">
                 更新通知
               </h2>
 
-              {/* 移除死板背景色块，纯留白文字排版，干净通透 */}
               <pre className="whitespace-pre-wrap text-xs text-slate-500 dark:text-slate-400 leading-relax mb-6 font-sans">
-                {UPDATE_CONTENT}
+                {CURRENT_POPUP_CONTENT}
               </pre>
 
-              {/* 低饱和单色按钮，hover微上浮，无刺眼渐变 */}
               <button
                 onClick={closeNotice}
                 className="w-full py-2.5 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-medium transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
