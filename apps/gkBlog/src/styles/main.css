@@ -32,6 +32,3 @@ html,
 body {
   touch-action: manipulation;
 }
-* {
-  touch-action: manipulation;
-}
