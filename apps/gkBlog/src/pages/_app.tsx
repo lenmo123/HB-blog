@@ -18,7 +18,7 @@ import "@waline/client/style";
 const MAINTENANCE = false;
 
 // ========== 更新公告配置 ==========
-const UPDATE_VERSION = "1.0";
+const UPDATE_VERSION = "1.1.4";
 const UPDATE_CONTENT = `
 1. 新增书籍
 《犯罪心理》、《相见欢》、《红与黑》
@@ -67,7 +67,7 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
     return () => window.removeEventListener('contextmenu', blockContext);
   }, []);
 
-  // 页面挂载立刻判断弹窗，无延迟
+  // 页面挂载立即校验公告，无延迟
   useEffect(() => {
     if (typeof window === "undefined") return;
     const localVer = localStorage.getItem("site_notice_version");
@@ -82,7 +82,7 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
     localStorage.setItem("site_notice_version", UPDATE_VERSION);
   };
 
-  // 维护页面拦截逻辑
+  // 维护页拦截逻辑
   const isMaintenancePage = route.pathname === "/maintenance";
   if (MAINTENANCE && !isMaintenancePage) {
     return (
@@ -120,34 +120,32 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
         <ClarityAnalytics />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID || ""} />
 
-        {/* 轻奢高级风公告弹窗 */}
+        {/* 高级极简公告弹窗 */}
         {showNotice && (
           <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/20 p-3 backdrop-blur-md"
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/10 p-4 backdrop-blur-lg"
             onClick={closeNotice}
           >
             <div
-              className="w-full max-w-sm bg-white dark:bg-slate-900 rounded-lg p-5 shadow-xl shadow-black/8 border border-slate-200 dark:border-slate-700/60"
+              className="w-full max-w-sm bg-white dark:bg-slate-900 rounded-xl p-6 shadow-2xl shadow-black/5 border border-slate-200/70 dark:border-slate-700/40 transition-transform duration-200 hover:scale-[1.01]"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* 移除右上角关闭X */}
+              {/* 已移除右上角关闭叉号 */}
 
-              {/* 标题左对齐，克制字重 */}
-              <h2 className="text-base font-medium text-slate-900 dark:text-slate-50 mb-4 text-left tracking-tight">
-                站点更新通知
+              {/* 标题左对齐，纤细高级字重 */}
+              <h2 className="text-base font-medium text-slate-900 dark:text-slate-100 mb-5 text-left tracking-tight">
+                更新通知
               </h2>
 
-              {/* 正文区域：淡渐变分层，无厚重底色，高级柔和 */}
-              <div className="rounded p-3 mb-5 bg-gradient-to-r from-slate-50/70 to-slate-100/40 dark:from-slate-800/30 dark:to-slate-800/10">
-                <pre className="whitespace-pre-wrap text-xs text-slate-500 dark:text-slate-400 leading-relax font-sans">
-                  {UPDATE_CONTENT}
-                </pre>
-              </div>
+              {/* 移除死板背景色块，纯留白文字排版，干净通透 */}
+              <pre className="whitespace-pre-wrap text-xs text-slate-500 dark:text-slate-400 leading-relax mb-6 font-sans">
+                {UPDATE_CONTENT}
+              </pre>
 
-              {/* 渐变柔和按钮，低饱和不刺眼 */}
+              {/* 低饱和单色按钮，hover微上浮，无刺眼渐变 */}
               <button
                 onClick={closeNotice}
-                className="w-full py-2.5 rounded-md bg-gradient-to-r from-blue-500 to-blue-400 hover:from-blue-450 hover:to-blue-350 transition-all text-xs font-medium text-white shadow-sm shadow-blue-400/15"
+                className="w-full py-2.5 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-medium transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
               >
                 我知道了
               </button>
