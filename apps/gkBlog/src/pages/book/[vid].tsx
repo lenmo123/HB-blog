@@ -87,7 +87,7 @@ export default function BookDetailPage({ book }: BookPageProps) {
                     src={baseCover}
                     alt={shortTitle}
                     fill
-                    className="object-cover"
+                    className="object-cover cover-img"
                     sizes="(max-width:768px) 40vw, 300px"
                     priority
                     quality={80}

@@ -13,9 +13,31 @@
 
 @import "tailwindcss/utilities";
 
-/* 禁止图片拖拽、选中，不影响点击功能 */
-img {
+/* 全局禁止长按弹出保存菜单、禁止文字选中 */
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+}
+
+/* 评论、输入框恢复选中文字，保证能打字 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+/* 正文普通图片：可点击放大，禁止拖拽/右键保存 */
+img:not(.cover-img) {
   -webkit-user-drag: none;
+  draggable: false;
   pointer-events: auto;
+}
+
+/* 图书封面图：完全屏蔽点击、长按、拖拽，无法任何操作 */
+img.cover-img {
+  -webkit-user-drag: none;
+  draggable: false;
+  pointer-events: none;
 }
