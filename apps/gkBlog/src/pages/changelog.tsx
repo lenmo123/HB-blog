@@ -16,13 +16,10 @@ const Changelog: NextPageWithLayout = () => {
       }}
     >
       <div className="px-6 py-8 max-w-2xl mx-auto">
-        {/* 仅保留页面顶部总标题，仅此一处“更新记录”文字 */}
-        <h1 className="text-xl font-medium text-slate-900 dark:text-slate-100 mb-8 tracking-tight">更新记录</h1>
-        
+        {/* 删掉手动写的h1标题，避免和Page布局自带标题重复 */}
         <div className="space-y-8">
           {CHANGELOG_DATA.map((item, idx) => {
             const lineList = item.contentText.split("\n");
-            // 过滤空行，不渲染空白换行，避免出现空的“更新记录”占位
             const validLines = lineList.filter(line => line.trim() !== "");
             return (
               <div 
