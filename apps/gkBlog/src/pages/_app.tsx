@@ -18,7 +18,7 @@ import "@waline/client/style";
 const MAINTENANCE = false;
 
 // ========== 更新公告配置（去除重复标题） ==========
-const UPDATE_VERSION = "1.0.8";
+const UPDATE_VERSION = "1.0.0";
 const UPDATE_CONTENT = `
 1. 新增书籍
 《犯罪心理》、《相见欢》、《红与黑》
@@ -126,30 +126,30 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
         <ClarityAnalytics />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID || ""} />
 
-        {/* 全局更新公告弹窗【优化排版】 */}
+        {/* 全局更新公告弹窗【全新简约改版】 */}
         {showNotice && (
           <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-6 backdrop-blur-sm"
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm"
             onClick={closeNotice}
           >
             <div
-              className="bg-white dark:bg-slate-900 w-full max-w-lg rounded-2xl p-8 relative shadow-2xl"
+              className="bg-white dark:bg-slate-900 w-full max-w-md rounded-xl p-6 relative shadow-lg"
               onClick={(e) => e.stopPropagation()}
             >
               {/* 关闭按钮 */}
               <button
                 onClick={closeNotice}
-                className="absolute top-5 right-5 text-slate-400 hover:text-slate-800 dark:hover:text-white text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xl w-7 h-7 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
               >
                 ×
               </button>
 
-              {/* 主标题（单独大号文字，不和正文重复） */}
-              <h2 className="text-2xl font-bold dark:text-white mb-6 text-center tracking-wide">站点更新通知</h2>
+              {/* 主标题 */}
+              <h2 className="text-xl font-semibold dark:text-white mb-5 text-center">站点更新通知</h2>
 
-              {/* 公告正文 */}
-              <div className="bg-slate-50 dark:bg-slate-800/60 rounded-xl p-5 mb-8">
-                <pre className="whitespace-pre-wrap text-base text-slate-700 dark:text-slate-200 leading-loose font-sans pl-1">
+              {/* 公告正文 - 缩小字号 */}
+              <div className="bg-slate-50 dark:bg-slate-800/40 rounded-lg p-4 mb-6">
+                <pre className="whitespace-pre-wrap text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
                   {UPDATE_CONTENT}
                 </pre>
               </div>
@@ -157,7 +157,7 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
               {/* 底部确认按钮 */}
               <button
                 onClick={closeNotice}
-                className="w-full py-3.5 rounded-xl bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 transition-all font-medium text-base shadow-lg shadow-blue-600/30"
+                className="w-full py-3 rounded-lg bg-blue-500 hover:bg-blue-600 active:bg-blue-700 transition-all font-medium text-sm text-white"
               >
                 我知道了
               </button>
