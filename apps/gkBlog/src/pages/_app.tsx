@@ -1,4 +1,5 @@
 import { Component, ReactElement, ReactNode, useEffect, useState } from "react";
+import Head from "next/head";
 import type { AppProps } from "next/app";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
@@ -111,47 +112,56 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
   }
 
   return (
-    <Provider>
-      <RootLayout>
-        <ErrorBoundary>
-          {getLayout(<Component {...pageProps} />)}
-        </ErrorBoundary>
-        <BaiDuAnalytics />
-        <ClarityAnalytics />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID || ""} />
+    <>
+      {/* 全局锁定移动端缩放，路由切换不失效 */}
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
+        />
+      </Head>
+      <Provider>
+        <RootLayout>
+          <ErrorBoundary>
+            {getLayout(<Component {...pageProps} />)}
+          </ErrorBoundary>
+          <BaiDuAnalytics />
+          <ClarityAnalytics />
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID || ""} />
 
-        {/* 全局更新公告弹窗 */}
-        {showNotice && (
-          <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4"
-            onClick={closeNotice}
-          >
+          {/* 全局更新公告弹窗 */}
+          {showNotice && (
             <div
-              className="bg-white dark:bg-slate-900 w-full max-w-md rounded-xl p-6 relative"
-              onClick={(e) => e.stopPropagation()}
+              className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4"
+              onClick={closeNotice}
             >
-              {/* 关闭按钮 */}
-              <button
-                onClick={closeNotice}
-                className="absolute top-3 right-3 text-slate-400 hover:text-slate-800 dark:hover:text-white text-xl"
+              <div
+                className="bg-white dark:bg-slate-900 w-full max-w-md rounded-xl p-6 relative"
+                onClick={(e) => e.stopPropagation()}
               >
-                ×
-              </button>
-              <h2 className="text-lg font-bold dark:text-white mb-4">站点更新通知</h2>
-              <pre className="whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
-                {UPDATE_CONTENT}
-              </pre>
-              <button
-                onClick={closeNotice}
-                className="w-full mt-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
-              >
-                我知道了
-              </button>
+                {/* 关闭按钮 */}
+                <button
+                  onClick={closeNotice}
+                  className="absolute top-3 right-3 text-slate-400 hover:text-slate-800 dark:hover:text-white text-xl"
+                >
+                  ×
+                </button>
+                <h2 className="text-lg font-bold dark:text-white mb-4">站点更新通知</h2>
+                <pre className="whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
+                  {UPDATE_CONTENT}
+                </pre>
+                <button
+                  onClick={closeNotice}
+                  className="w-full mt-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
+                >
+                  我知道了
+                </button>
+              </div>
             </div>
-          </div>
-        )}
-      </RootLayout>
-    </Provider>
+          )}
+        </RootLayout>
+      </Provider>
+    </>
   );
 }
 
