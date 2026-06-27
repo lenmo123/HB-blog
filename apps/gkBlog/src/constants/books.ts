@@ -67,10 +67,6 @@ export const bookList = [
     desc: "白柳在失业后被卷入一个无法停止的惊悚直播游戏中，游戏中充满了怪物与各种意想不到的恐怖规则。在死亡与恐惧的裹挟之下，他意外发现自己可以利用游戏规则牟利，就此踏入诡异的惊悚直播世界。",
     previewImages: [
       "https://stimg.de/img/2026/06/26/RZ7gY.png",
-      "https://s41.ax1x.com/2026/06/26/pmNcHaT.png",
-      "https://s41.ax1x.com/2026/06/26/pmNcjz9.png",
-      "https://s41.ax1x.com/2026/06/26/pmNcXRJ.png",
-      "https://s41.ax1x.com/2026/06/26/pmNcOG4.png"
     ],
     downloadUrl: ""
   },
