@@ -17,11 +17,17 @@ import "@waline/client/style";
 // ========== 全局总开关 true=全站全部页面关闭 ==========
 const MAINTENANCE = false;
 
-// ========== 更新公告配置（每次更新只改这两处） ==========
+// ========== 更新公告配置（去除重复标题） ==========
 const UPDATE_VERSION = "1.0.8";
-const UPDATE_CONTENT = `📢 站点更新公告
-1. 新加书籍：《犯罪心理》、《相见欢》、《红与黑》
-2. 书籍更新：《判官》更新1.2、《二哈和他的白猫师尊》更新1.2、《全能游戏设计师》更新1.2、《人鱼陷落》更新1.2`;
+const UPDATE_CONTENT = `
+1. 新增书籍
+《犯罪心理》、《相见欢》、《红与黑》
+
+2. 书籍版本更新
+· 《判官》 更新至1.2
+· 《二哈和他的白猫师尊》 更新至1.2
+· 《全能游戏设计师》 更新至1.2
+· 《人鱼陷落》 更新至1.2`;
 
 
 // 全局错误边界
@@ -120,30 +126,38 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
         <ClarityAnalytics />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ID || ""} />
 
-        {/* 全局更新公告弹窗 */}
+        {/* 全局更新公告弹窗【优化排版】 */}
         {showNotice && (
           <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4"
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-6 backdrop-blur-sm"
             onClick={closeNotice}
           >
             <div
-              className="bg-white dark:bg-slate-900 w-full max-w-md rounded-xl p-6 relative"
+              className="bg-white dark:bg-slate-900 w-full max-w-lg rounded-2xl p-8 relative shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* 关闭按钮 */}
               <button
                 onClick={closeNotice}
-                className="absolute top-3 right-3 text-slate-400 hover:text-slate-800 dark:hover:text-white text-xl"
+                className="absolute top-5 right-5 text-slate-400 hover:text-slate-800 dark:hover:text-white text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
               >
                 ×
               </button>
-              <h2 className="text-lg font-bold dark:text-white mb-4">站点更新通知</h2>
-              <pre className="whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
-                {UPDATE_CONTENT}
-              </pre>
+
+              {/* 主标题（单独大号文字，不和正文重复） */}
+              <h2 className="text-2xl font-bold dark:text-white mb-6 text-center tracking-wide">站点更新通知</h2>
+
+              {/* 公告正文 */}
+              <div className="bg-slate-50 dark:bg-slate-800/60 rounded-xl p-5 mb-8">
+                <pre className="whitespace-pre-wrap text-base text-slate-700 dark:text-slate-200 leading-loose font-sans pl-1">
+                  {UPDATE_CONTENT}
+                </pre>
+              </div>
+
+              {/* 底部确认按钮 */}
               <button
                 onClick={closeNotice}
-                className="w-full mt-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
+                className="w-full py-3.5 rounded-xl bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 transition-all font-medium text-base shadow-lg shadow-blue-600/30"
               >
                 我知道了
               </button>
