@@ -138,7 +138,7 @@ export default function MediaContents() {
                       alt={shortTitle}
                       fill
                       sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                      className="object-cover"
+                      className="object-cover cover-img"
                       quality={80}
                       placeholder="blur"
                       blurDataURL="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABl0BV19JQBw=="
