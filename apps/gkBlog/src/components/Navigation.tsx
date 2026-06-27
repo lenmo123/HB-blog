@@ -54,6 +54,14 @@ function Navbar() {
                   onClick={() => playClickSound()}
                 />
               </li>
+              {/* 新增：更新记录导航按钮，和图书并排 */}
+              <li>
+                <NavLink
+                  title="更新记录"
+                  href="/changelog"
+                  onClick={() => playClickSound()}
+                />
+              </li>
             </ul>
           </div>
 
