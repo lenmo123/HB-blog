@@ -1,38 +1,48 @@
 'use client';
-
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useMemo, useState, useEffect } from "react";
 import { bookList } from "@/constants/books";
 
 const CATEGORIES = [
-  "全部",
-  "玄幻", "仙侠", "武侠", "奇幻",
+  "全部", "玄幻", "仙侠", "武侠", "奇幻",
   "都市", "都市异能", "现实", "校园",
   "历史", "军事", "科幻", "游戏",
   "悬疑", "灵异", "侦探", "言情",
   "无限流", "耽美文", "女频文", "系统流",
-  "二次元", "轻小说",
-  "文学", "传记", "少儿", "社科",
+  "二次元", "轻小说", "文学", "传记", "少儿", "社科",
   "实体书", "教材", "其他"
 ];
 
 export default function MediaContents() {
   const router = useRouter();
-  const [search, setSearch] = useState("");
-  const [activeCat, setActiveCat] = useState("全部");
-  const [page, setPage] = useState(1);
-  // 默认关闭
+  const searchParams = useSearchParams();
+
+  // 从URL读取初始参数，无则默认值
+  const initPage = Number(searchParams.get("page")) || 1;
+  const initCat = searchParams.get("cat") || "全部";
+  const initSearch = searchParams.get("q") || "";
+
+  const [search, setSearch] = useState(initSearch);
+  const [activeCat, setActiveCat] = useState(initCat);
+  const [page, setPage] = useState(initPage);
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const [imgErrorMap, setImgErrorMap] = useState<Record<string, boolean>>({});
   const pageSize = 12;
 
+  // 切换分页/分类/搜索时同步更新URL，不新增历史记录
+  const updateUrlParams = (newPage?: number, newCat?: string, newQ?: string) => {
+    const params = new URLSearchParams(searchParams);
+    if (newPage) params.set("page", String(newPage));
+    if (newCat !== undefined) params.set("cat", newCat);
+    if (newQ !== undefined) params.set("q", newQ);
+    router.replace(`/media?${params.toString()}`, { scroll: false });
+  };
+
   const filtered = useMemo(() => {
     return bookList.filter(b => {
       const matchSearch = b.title.toLowerCase().includes(search.trim().toLowerCase());
-      const matchCat =
-        activeCat === "全部" ||
-        (Array.isArray(b.category) ? b.category.includes(activeCat) : b.category === activeCat);
+      const matchCat = activeCat === "全部" || (Array.isArray(b.category) ? b.category.includes(activeCat) : b.category === activeCat);
       return matchSearch && matchCat;
     });
   }, [search, activeCat]);
@@ -43,13 +53,30 @@ export default function MediaContents() {
     return filtered.slice(start, start + pageSize);
   }, [filtered, page]);
 
-  // ========== 改动1：跳转函数改为接收vid数字 ==========
   const goBook = (vid: number) => {
     router.push(`/book/${vid}`);
   };
 
   const handleImgError = (key: string) => {
     setImgErrorMap(prev => ({ ...prev, [key]: true }));
+  };
+
+  // 切换页码时同步地址栏
+  const changePage = (val: number) => {
+    setPage(val);
+    updateUrlParams(val);
+  };
+  // 切换分类重置第一页
+  const changeCat = (cat: string) => {
+    setActiveCat(cat);
+    setPage(1);
+    updateUrlParams(1, cat, search);
+  };
+  // 搜索重置第一页
+  const changeSearch = (val: string) => {
+    setSearch(val);
+    setPage(1);
+    updateUrlParams(1, activeCat, val);
   };
 
   return (
@@ -83,10 +110,7 @@ export default function MediaContents() {
             type="text"
             placeholder="搜索书名..."
             value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-              setPage(1);
-            }}
+            onChange={(e) => changeSearch(e.target.value)}
             className="w-full rounded-xl px-3.5 py-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder-slate-500"
           />
         </div>
@@ -107,10 +131,7 @@ export default function MediaContents() {
             {CATEGORIES.map(cat => (
               <button
                 key={cat}
-                onClick={() => {
-                  setActiveCat(cat);
-                  setPage(1);
-                }}
+                onClick={() => changeCat(cat)}
                 className={`px-3 py-0.5 rounded-full text-xs transition-all ${activeCat === cat ? "bg-blue-600 text-white" : "bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 dark:text-slate-300"}`}
               >
                 {cat}
@@ -123,13 +144,11 @@ export default function MediaContents() {
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-6 mt-5">
         {showBooks.map((book) => {
           const shortTitle = book.title.split('-')[0];
-          // 读取图床预览图数组第一张
           const src = book.previewImages?.[0] ?? "";
           const hasError = imgErrorMap[shortTitle];
 
           return (
             <div key={book.vid} className="flex flex-col gap-1.5">
-              {/* ========== 改动2：传 book.vid 而不是 title ========== */}
               <button onClick={() => goBook(book.vid)} className="rounded-sm overflow-hidden transition-all duration-300 hover:-translate-y-1">
                 <div className="book-cover-frame relative w-full aspect-[5/7] bg-slate-100 dark:bg-slate-800">
                   {src && !hasError ? (
@@ -164,7 +183,7 @@ export default function MediaContents() {
       {totalPage > 1 && (
         <div className="flex items-center justify-center gap-3 mt-10">
           <button
-            onClick={() => setPage(p => Math.max(1, p - 1))}
+            onClick={() => changePage(Math.max(1, page - 1))}
             disabled={page === 1}
             className="px-4 py-2 text-sm rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition disabled:opacity-40 disabled:pointer-events-none"
           >
@@ -174,7 +193,7 @@ export default function MediaContents() {
             {page} / {totalPage}
           </span>
           <button
-            onClick={() => setPage(p => Math.min(totalPage, p + 1))}
+            onClick={() => changePage(Math.min(totalPage, page + 1))}
             disabled={page === totalPage}
             className="px-4 py-2 text-sm rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition disabled:opacity-40 disabled:pointer-events-none"
           >
