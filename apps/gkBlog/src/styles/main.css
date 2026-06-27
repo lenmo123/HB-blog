@@ -12,3 +12,10 @@
 @import "./stats.css";
 
 @import "tailwindcss/utilities";
+
+/* 禁止图片拖拽、选中，不影响点击功能 */
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: auto;
+}

@@ -47,6 +47,13 @@ type AppPropsWithLayout = AppProps & { Component: NextPageWithLayout };
 function App({ Component, pageProps, router }: AppPropsWithLayout) {
   const route = useRouter();
 
+  // 新增：全局拦截右键菜单，禁止图片另存为
+  useEffect(() => {
+    const blockRightMenu = (e: MouseEvent) => e.preventDefault();
+    window.addEventListener("contextmenu", blockRightMenu);
+    return () => window.removeEventListener("contextmenu", blockRightMenu);
+  }, []);
+
   // 维护页放行，其余全部拦截
   const isMaintenancePage = route.pathname === "/maintenance";
 
