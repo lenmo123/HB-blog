@@ -1,7 +1,7 @@
 // 所有更新记录，新版本放数组最顶部
 export const CHANGELOG_DATA = [
   {
-    version: "1.1.4",
+    version: "1.0.0",
     date: "2026-06-27",
     // 仅一处完整更新文本，弹窗、更新页共用
     contentText: `1. 新增书籍
