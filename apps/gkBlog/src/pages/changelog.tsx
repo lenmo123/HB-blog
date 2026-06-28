@@ -21,18 +21,18 @@ const Changelog: NextPageWithLayout = () => {
             const lineList = item.contentText.split("\n");
             const validLines = lineList.filter(line => line.trim() !== "");
             return (
-              <div key={idx} className="relative grid grid-cols-[80px_1fr] gap-3 group">
-                {/* 左侧日期栏，缩小宽度、字号更小 */}
-                <div className="text-[10px] text-slate-400 dark:text-slate-500 whitespace-nowrap text-right pt-[2px]">
+              <div key={idx} className="relative grid grid-cols-[80px_1fr] gap-3 group items-start">
+                {/* 左侧日期：调整顶部内边距，和版本号水平对齐 */}
+                <div className="text-[10px] text-slate-400 dark:text-slate-500 whitespace-nowrap text-right pt-1">
                   {item.date}
                 </div>
 
-                {/* 右侧内容区，减少左边内边距，整体往左靠 */}
+                {/* 右侧内容区 */}
                 <div className="relative pl-6 border-l border-slate-200 dark:border-slate-800">
-                  {/* 时间轴圆点同步左移 */}
-                  <span className="absolute -left-[6px] top-[2px] w-2.5 h-2.5 rounded-full bg-blue-500 dark:bg-blue-400 ring-3 ring-white dark:ring-slate-950" />
+                  {/* 圆点顶部同步调整，和文字齐平 */}
+                  <span className="absolute -left-[6px] top-[6px] w-2.5 h-2.5 rounded-full bg-blue-500 dark:bg-blue-400 ring-3 ring-white dark:ring-slate-950" />
                   
-                  {/* 版本号缩小字号 */}
+                  {/* 版本号 */}
                   <div className="mb-3">
                     <span className="text-xs font-medium text-slate-900 dark:text-slate-100">v{item.version}</span>
                   </div>
