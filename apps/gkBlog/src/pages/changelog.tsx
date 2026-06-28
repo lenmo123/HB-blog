@@ -16,10 +16,9 @@ const Changelog: NextPageWithLayout = () => {
       }}
     >
       <div className="px-5 md:px-10 py-12 max-w-3xl mx-auto">
-        {/* 页面唯一主标题，极简克制 */}
+        {/* 仅保留唯一主标题，删除下方副标题 */}
         <header className="mb-14">
           <h1 className="text-3xl font-semibold text-slate-950 dark:text-slate-50 tracking-tight">更新记录</h1>
-          <p className="mt-2 text-sm text-slate-400 dark:text-slate-500">站点迭代全部版本变更明细</p>
         </header>
 
         {/* 纵向时间线容器 */}
@@ -32,20 +31,20 @@ const Changelog: NextPageWithLayout = () => {
                 {/* 时间轴圆点 */}
                 <span className="absolute -left-[41px] top-1 w-3 h-3 rounded-full bg-blue-500 dark:bg-blue-400 ring-4 ring-white dark:ring-slate-950" />
                 
-                {/* 版本+日期头部 */}
+                {/* 调整布局：日期在圆点左侧，版本号在右侧，整体字号缩小 */}
                 <div className="flex items-baseline gap-4 mb-4">
-                  <span className="text-lg font-semibold text-slate-900 dark:text-slate-100">v{item.version}</span>
                   <span className="text-xs text-slate-400 dark:text-slate-500">{item.date}</span>
+                  <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">v{item.version}</span>
                 </div>
 
-                {/* 更新内容文本 */}
-                <div className="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                {/* 更新内容字号缩小 */}
+                <div className="space-y-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                   {validLines.map((line, i) => (
                     <div key={i}>{line}</div>
                   ))}
                 </div>
 
-                {/* hover 细微高亮，不突兀 */}
+                {/* 极简hover背景提亮 */}
                 <div className="absolute inset-0 -ml-8 -mr-8 -my-4 rounded-xl opacity-0 group-hover:opacity-100 bg-slate-50 dark:bg-slate-900/30 -z-10 transition-opacity duration-200" />
               </div>
             );
