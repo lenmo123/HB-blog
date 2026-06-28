@@ -102,14 +102,9 @@ export default function MediaContents() {
           box-shadow: inset 0 -1px 4px rgba(0,0,0,0.12);
           pointer-events: none;
         }
-        /* 新增：全局去除移动端输入框原生绿色高亮 */
+        /* 清除手机点击绿色蒙层 */
         input {
           -webkit-tap-highlight-color: transparent;
-          outline: none !important;
-        }
-        input:focus {
-          box-shadow: none !important;
-          outline: none !important;
         }
       `}</style>
 
@@ -120,7 +115,7 @@ export default function MediaContents() {
             placeholder="搜索书名..."
             value={search}
             onChange={(e) => changeSearch(e.target.value)}
-            className="w-full rounded-xl px-3.5 py-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder-slate-500 !outline-none !ring-0"
+            className="w-full rounded-xl px-3.5 py-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder-slate-500 focus:border-slate-400 dark:focus:border-slate-500 focus:ring-0"
           />
         </div>
         <button
