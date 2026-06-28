@@ -21,16 +21,17 @@ const Changelog: NextPageWithLayout = () => {
             const lineList = item.contentText.split("\n");
             const validLines = lineList.filter(line => line.trim() !== "");
             return (
-              <div key={idx} className="relative grid grid-cols-[80px_1fr] gap-3 group items-center">
-                {/* 左侧日期，无上下内边距，垂直居中 */}
+              {/* grid 改为 items-start 顶部对齐，不再垂直居中 */}
+              <div key={idx} className="relative grid grid-cols-[80px_1fr] gap-3 group items-start">
+                {/* 左侧日期：顶部对齐，无上下偏移 */}
                 <div className="text-[10px] text-slate-400 dark:text-slate-500 whitespace-nowrap text-right">
                   {item.date}
                 </div>
 
-                {/* 右侧内容区 */}
+                {/* 右侧内容区，竖线完整贯穿 */}
                 <div className="relative pl-6 border-l border-slate-200 dark:border-slate-800">
-                  {/* 圆点精准居中，和文字中线对齐 */}
-                  <span className="absolute -left-[6px] top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-blue-500 dark:bg-blue-400 ring-3 ring-white dark:ring-slate-950" />
+                  {/* 圆点固定在版本文字顶部，和日期齐平，不再垂直居中 */}
+                  <span className="absolute -left-[6px] top-[4px] w-2.5 h-2.5 rounded-full bg-blue-500 dark:bg-blue-400 ring-3 ring-white dark:ring-slate-950" />
                   
                   {/* 版本号 */}
                   <div className="mb-3">
