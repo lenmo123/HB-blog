@@ -15,39 +15,39 @@ const Changelog: NextPageWithLayout = () => {
         description: "站点全部版本更新日志",
       }}
     >
-      <div className="px-5 md:px-10 py-12 max-w-3xl mx-auto">
-        {/* 彻底删除手动h1标题，避免和Page布局自动标题重复 */}
-
-        {/* 纵向时间线容器 */}
-        <div className="relative border-l border-slate-200 dark:border-slate-800 pl-8 space-y-14">
+      {/* 外层容器增加 overflow-x-hidden 兜底防横向滚动 */}
+      <div className="px-5 md:px-10 py-12 max-w-3xl mx-auto overflow-x-hidden">
+        {/* 时间线改用网格，左侧固定日期栏，不会溢出屏幕 */}
+        <div className="space-y-14">
           {CHANGELOG_DATA.map((item, idx) => {
             const lineList = item.contentText.split("\n");
             const validLines = lineList.filter(line => line.trim() !== "");
             return (
-              <div key={idx} className="relative group">
-                {/* 左侧：日期，圆点/竖线最左边 */}
-                <div className="absolute -left-[90px] top-1 text-xs text-slate-400 dark:text-slate-500 whitespace-nowrap">
+              <div key={idx} className="relative grid grid-cols-[90px_1fr] gap-4 group">
+                {/* 第一列：日期，圆点左侧，右对齐，不会溢出屏幕 */}
+                <div className="text-xs text-slate-400 dark:text-slate-500 whitespace-nowrap text-right pt-1">
                   {item.date}
                 </div>
 
-                {/* 时间轴圆点 */}
-                <span className="absolute -left-[41px] top-1 w-3 h-3 rounded-full bg-blue-500 dark:bg-blue-400 ring-4 ring-white dark:ring-slate-950" />
-                
-                {/* 右侧内容区域 */}
-                <div>
+                {/* 第二列：版本+内容 + 时间轴线圆点 */}
+                <div className="relative pl-8 border-l border-slate-200 dark:border-slate-800">
+                  {/* 时间轴圆点 */}
+                  <span className="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-blue-500 dark:bg-blue-400 ring-4 ring-white dark:ring-slate-950" />
+                  
+                  {/* 版本号 */}
                   <div className="mb-4">
                     <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">v{item.version}</span>
                   </div>
 
-                  {/* 缩小字号内容 */}
+                  {/* 更新内容小号文字 */}
                   <div className="space-y-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                     {validLines.map((line, i) => (
                       <div key={i}>{line}</div>
                     ))}
                   </div>
 
-                  {/* hover淡背景 */}
-                  <div className="absolute inset-0 -ml-8 -mr-8 -my-4 rounded-xl opacity-0 group-hover:opacity-100 bg-slate-50 dark:bg-slate-900/30 -z-10 transition-opacity duration-200" />
+                  {/* hover背景高亮，仅作用内容区域，不溢出 */}
+                  <div className="absolute inset-0 -ml-8 -my-4 rounded-xl opacity-0 group-hover:opacity-100 bg-slate-50 dark:bg-slate-900/30 -z-10 transition-opacity duration-200" />
                 </div>
               </div>
             );
