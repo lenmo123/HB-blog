@@ -16,10 +16,7 @@ const Changelog: NextPageWithLayout = () => {
       }}
     >
       <div className="px-5 md:px-10 py-12 max-w-3xl mx-auto">
-        {/* 仅保留唯一主标题，删除下方副标题 */}
-        <header className="mb-14">
-          <h1 className="text-3xl font-semibold text-slate-950 dark:text-slate-50 tracking-tight">更新记录</h1>
-        </header>
+        {/* 彻底删除手动h1标题，避免和Page布局自动标题重复 */}
 
         {/* 纵向时间线容器 */}
         <div className="relative border-l border-slate-200 dark:border-slate-800 pl-8 space-y-14">
@@ -28,24 +25,30 @@ const Changelog: NextPageWithLayout = () => {
             const validLines = lineList.filter(line => line.trim() !== "");
             return (
               <div key={idx} className="relative group">
+                {/* 左侧：日期，圆点/竖线最左边 */}
+                <div className="absolute -left-[90px] top-1 text-xs text-slate-400 dark:text-slate-500 whitespace-nowrap">
+                  {item.date}
+                </div>
+
                 {/* 时间轴圆点 */}
                 <span className="absolute -left-[41px] top-1 w-3 h-3 rounded-full bg-blue-500 dark:bg-blue-400 ring-4 ring-white dark:ring-slate-950" />
                 
-                {/* 调整布局：日期在圆点左侧，版本号在右侧，整体字号缩小 */}
-                <div className="flex items-baseline gap-4 mb-4">
-                  <span className="text-xs text-slate-400 dark:text-slate-500">{item.date}</span>
-                  <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">v{item.version}</span>
-                </div>
+                {/* 右侧内容区域 */}
+                <div>
+                  <div className="mb-4">
+                    <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">v{item.version}</span>
+                  </div>
 
-                {/* 更新内容字号缩小 */}
-                <div className="space-y-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                  {validLines.map((line, i) => (
-                    <div key={i}>{line}</div>
-                  ))}
-                </div>
+                  {/* 缩小字号内容 */}
+                  <div className="space-y-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    {validLines.map((line, i) => (
+                      <div key={i}>{line}</div>
+                    ))}
+                  </div>
 
-                {/* 极简hover背景提亮 */}
-                <div className="absolute inset-0 -ml-8 -mr-8 -my-4 rounded-xl opacity-0 group-hover:opacity-100 bg-slate-50 dark:bg-slate-900/30 -z-10 transition-opacity duration-200" />
+                  {/* hover淡背景 */}
+                  <div className="absolute inset-0 -ml-8 -mr-8 -my-4 rounded-xl opacity-0 group-hover:opacity-100 bg-slate-50 dark:bg-slate-900/30 -z-10 transition-opacity duration-200" />
+                </div>
               </div>
             );
           })}
