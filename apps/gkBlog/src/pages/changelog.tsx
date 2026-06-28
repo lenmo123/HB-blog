@@ -23,18 +23,18 @@ const Changelog: NextPageWithLayout = () => {
             const validLines = lineList.filter(line => line.trim() !== "");
             return (
               <div key={idx} className="relative grid grid-cols-[80px_1fr] gap-3 group items-start">
-                {/* 左侧日期，顶部对齐无偏移 */}
+                {/* 左侧日期，顶部对齐 */}
                 <div className="text-[10px] text-slate-400 dark:text-slate-500 whitespace-nowrap text-right">
                   {item.date}
                 </div>
 
                 {/* 右侧内容区 */}
                 <div className="relative pl-6 border-l border-slate-200 dark:border-slate-800">
-                  {/* 圆点固定位置不动 */}
-                  <span className="absolute -left-[6px] top-[4px] w-2.5 h-2.5 rounded-full bg-blue-500 dark:bg-blue-400 ring-3 ring-white dark:ring-slate-950" />
+                  {/* 圆点垂直位置不变，仅水平微调卡在竖线中间 */}
+                  <span className="absolute -left-[6.5px] top-[4px] w-2.5 h-2.5 rounded-full bg-blue-500 dark:bg-blue-400 ring-3 ring-white dark:ring-slate-950" />
                   
-                  {/* mt-[-4px] 版本号整体向上移动4px，和日期圆点平齐 */}
-                  <div className="mb-3 mt-[-4px]">
+                  {/* mt-[-6px] 版本号再向上偏移，对齐日期水平线 */}
+                  <div className="mb-3 mt-[-6px]">
                     <span className="text-xs font-medium text-slate-900 dark:text-slate-100">v{item.version}</span>
                   </div>
 
