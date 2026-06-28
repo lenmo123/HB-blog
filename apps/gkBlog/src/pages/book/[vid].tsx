@@ -74,12 +74,15 @@ export default function BookDetailPage({ book }: BookPageProps) {
       <Head>
         <title>{fullTitle} - 小冷书屋</title>
         <meta name="description" content={book.desc} />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        {/* 禁止缩放+锁定视口宽度，辅助消除横向滚动 */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       </Head>
 
-      <div className="min-h-screen bg-[#f8f9fa] dark:bg-slate-900">
-        <div className="max-w-6xl mx-auto px-2 sm:px-4 pt-24 sm:pt-32 pb-6">
-          <div className="flex flex-row gap-4 sm:gap-8 items-start w-full mb-8 sm:mb-10 ml-4 sm:ml-6">
+      {/* 外层加 w-full max-w-full overflow-x-hidden 根治左右滑动 */}
+      <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#f8f9fa] dark:bg-slate-900">
+        <div className="max-w-6xl mx-auto px-2 sm:px-4 pt-24 sm:pt-32 pb-6 min-w-0">
+          {/* 增加 min-w-0 允许收缩，防止内部撑开 */}
+          <div className="flex flex-row gap-4 sm:gap-8 items-start w-full mb-8 sm:mb-10 ml-4 sm:ml-6 min-w-0">
             <div className="w-[40%] sm:w-[300px] flex-shrink-0">
               <div className="aspect-[5/7] relative rounded overflow-hidden shadow-xl">
                 {baseCover ? (
@@ -112,6 +115,7 @@ export default function BookDetailPage({ book }: BookPageProps) {
               </div>
             </div>
 
+            {/* min-w-0 让文字自动换行，不撑宽容器 */}
             <div className="flex-1 min-w-0">
               <h1 className="text-xl sm:text-3xl md:text-4xl font-bold mb-3 text-slate-900 dark:text-slate-100 break-words">
                 {shortTitle}
@@ -176,7 +180,7 @@ export default function BookDetailPage({ book }: BookPageProps) {
             </div>
           </div>
 
-          <div className="bg-white/70 dark:bg-slate-800 rounded-xl p-4 sm:p-6 shadow-sm border border-slate-100/50 dark:border-slate-700 mb-4">
+          <div className="bg-white/70 dark:bg-slate-800 rounded-xl p-4 sm:p-6 shadow-sm border border-slate-100/50 dark:border-slate-700 mb-4 min-w-0">
             <div
               className="flex items-center justify-between cursor-pointer"
               onClick={() => setIsExpanded(!isExpanded)}
@@ -203,14 +207,14 @@ export default function BookDetailPage({ book }: BookPageProps) {
 
             {isExpanded && (
               <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700">
-                <p className="text-xs sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed break-words">
                   {book.desc || "暂无简介"}
                 </p>
               </div>
             )}
           </div>
 
-          <div className="mb-4 text-[0.7rem] leading-tight text-gray-500 dark:bg-slate-900 space-y-1">
+          <div className="mb-4 text-[0.7rem] leading-tight text-gray-500 dark:bg-slate-900 space-y-1 min-w-0">
             <p className="flex items-center gap-1">
               <span className="text-blue-500">•</span>
               当前资源仅限个人学习与研究，不用于传播、商用、公开分发
@@ -229,7 +233,7 @@ export default function BookDetailPage({ book }: BookPageProps) {
             </p>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-8 min-w-0">
             <a
               href={book.downloadUrl || "#"}
               target="_blank"
@@ -240,16 +244,17 @@ export default function BookDetailPage({ book }: BookPageProps) {
             </a>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-8 min-w-0">
             <h2 className="text-xl font-semibold mb-4 text-slate-900 dark:text-slate-100">
               内容预览
             </h2>
-            <div className="flex gap-4 overflow-x-auto pb-4">
+            {/* 预览滚动容器增加 max-w-full，限制横向溢出 */}
+            <div className="flex gap-4 overflow-x-auto pb-4 max-w-full">
               {images.length > 0 ? (
                 images.map((src, idx) => (
                   <div
                     key={idx}
-                    className="min-w-[250px] aspect-[3/4] relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
+                    className="min-w-[250px] aspect-[3/4] relative rounded-xl overflow-hidden shadow-lg cursor-pointer flex-shrink-0"
                     onClick={() => setCurrentIndex(idx)}
                   >
                     <Image
