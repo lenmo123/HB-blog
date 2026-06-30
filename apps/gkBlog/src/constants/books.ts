@@ -54,6 +54,26 @@ export const siteUpdateLogs: SiteUpdateLogItem[] = [
 
 export const bookList = [
   // ========== 置顶书籍 · 官网原版简介 ==========
+
+
+{
+    vid: 60,
+    version: "V1.0",
+    title: "天幕红尘-豆豆",
+    author: "豆豆",
+    category: ["都市文学", "实体书", "商战"],
+    finishTime: "2013-05-01",
+    wordCount: "24.0万字",
+    tags: ["豆豆三部曲", "见路不走", "哲理", "商战", "人性"],
+    platform: "作家出版社",
+    desc: "叶子农是一位深谙人性规律与生存本质的智者，因故人遗愿卷入跨国商战与政治漩涡。全书以“见路不走”为核心思想，探讨文化属性、因果规律与处世哲学，在时代变局中展现通透的生存智慧。",
+    previewImages: [
+      "https://stimg.de/img/2026/06/30/Raif7.webp",
+    ],
+    downloadUrl: ""
+},
+
+
 {
     vid: 1,
     version: "V1.0",
@@ -919,15 +939,28 @@ export const bookList = [
 
 // ========== 每本书独立版本日志（改造后：key为vid字符串，适配数字路由） ==========
 export const bookVersionLogs: Record<string, VersionLogItem[]> = {
+
+ "60": [
+    {
+      version: "V1.0",
+      date: "2026-03-20",
+      changes: [
+        "多看版本，适配专属排版",
+        "不外发"
+
+      ]
+    }
+
+  ],
   "1": [
     {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        "发布多看版本，适配专属排版",
-        "发布Kindle版本，适配电纸书设备",
-        "发布墨水屏版本，护眼阅读优化",
-        "发布平板版本，大屏阅读体验升级"
+        "多看版本，适配专属排版",
+        "Kindle版本，适配电纸书设备",
+        "墨水屏版本，护眼阅读优化",
+        "平板版本，大屏阅读体验升级"
       ]
     }
   ],
@@ -944,10 +977,10 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       date: "2026-03-20",
       changes: [
         "全书内容完整收录，无删减",
-        "上线多看版本，章节排版优化",
-        "上线Kindle版本，适配设备显示",
-        "上线墨水屏版本，护眼阅读更舒适",
-        "上线平板版本，沉浸式阅读适配"
+        "多看版本，章节排版优化",
+        "Kindle版本，适配设备显示",
+        "墨水屏版本，护眼阅读更舒适",
+        "平板版本，沉浸式阅读适配"
       ]
     }
   ],
@@ -999,11 +1032,11 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        "书籍正式发布，内容完整校对",
-        "发布多看版本，阅读体验优化",
-        "发布Kindle版本，适配电纸书",
-        "发布墨水屏版本，护眼适配",
-        "发布平板版本，大屏阅读优化"
+        "书籍正式，内容完整校对",
+        "多看版本，阅读体验优化",
+        "Kindle版本，适配电纸书",
+        "墨水屏版本，护眼适配",
+        "平板版本，大屏阅读优化"
       ]
     }
   ],
@@ -1036,10 +1069,10 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
       version: "V1.0",
       date: "2026-03-20",
       changes: [
-        "发布多看版本，适配专属排版",
-        "发布Kindle版本，适配电纸书设备",
-        "发布墨水屏版本，护眼阅读优化",
-        "发布平板版本，大屏阅读体验升级"
+        "多看版本，适配专属排版",
+        "Kindle版本，适配电纸书设备",
+        "墨水屏版本，护眼阅读优化",
+        "平板版本，大屏阅读体验升级"
       ]
     }
   ],
@@ -1064,52 +1097,52 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
     }
   ],
   // 其余所有书籍统一日志 2026-04-08
-  "3": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "4": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "6": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "9": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "14": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "15": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "16": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "17": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "18": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "19": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "20": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "21": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "22": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "23": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "24": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "25": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "26": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "27": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "28": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "29": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "30": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "31": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "32": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "33": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "34": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "35": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "36": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "37": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "38": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "39": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "40": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "41": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "42": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "43": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "44": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "45": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "46": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "47": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "48": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "49": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "50": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "51": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "52": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "53": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "54": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
-  "55": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本"] }],
+  "3": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "4": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "6": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "9": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "14": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "15": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "16": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "17": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "18": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "19": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "20": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "21": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "22": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "23": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "24": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "25": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "26": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "27": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "28": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "29": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "30": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "31": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "32": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "33": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "34": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "35": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "36": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "37": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "38": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "39": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "40": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "41": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "42": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "43": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "44": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "45": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "46": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "47": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "48": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "49": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "50": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "51": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "52": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "53": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "54": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
+  "55": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本"] }],
   "56": [
     {
       version: "V1.0",
@@ -1135,6 +1168,6 @@ export const bookVersionLogs: Record<string, VersionLogItem[]> = {
     }
   ],
 
-  "58": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本","不外发"] }],
-  "59": [{ version: "V1.0", date: "2026-04-08", changes: ["发布多看版本","不外发"] }],
+  "58": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本","不外发"] }],
+  "59": [{ version: "V1.0", date: "2026-04-08", changes: ["多看版本","不外发"] }],
 };
